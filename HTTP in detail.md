@@ -13,3 +13,10 @@ What does HTTP stand for?
 
 hypertext transfer protocol
 
+What does the S in HTTPS stand for?
+
+secure
+
+On the mock webpage on the right there is an issue, once you've found it, click on it. What is the challenge flag?
+
+```THM{INVALID_HTTP_CERT}```
