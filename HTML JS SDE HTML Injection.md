@@ -48,4 +48,20 @@ Elements can also have an id attribute (```<p id="example">```), which is unique
 
 You can view the HTML of any website by right-clicking and selecting "View Page Source" (Chrome) / "Show Page Source" (Safari).
 
+**Questions / Answers**
+
+Let's play with some HTML! On the right-hand side, you should see a box that renders HTML - If you enter some HTML into the box and click the green "Render HTML Code" button, it will render your HTML on the page; you should see an image of some cats.
+
+One of the images on the cat website is broken - fix it, and the image will reveal the hidden text answer!
+
+```htmlhero```
+
+Add a dog image to the page by adding another img tag (```<img>```) on line 11. The dog image location is ```img/dog-1.png```. What is the text in the dog image?
+
+```doghtml```
+
+<h3>Javascript</h3>
+
+
+
 
