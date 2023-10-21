@@ -25,3 +25,5 @@ On the mock webpage on the right there is an issue, once you've found it, click 
 
 <h3>Requests and Responses</h3>
 
+When we access a website, your browser will need to make requests to a web server for assets such as HTML, Images, and download the responses. Before that, you need to tell the browser specifically how and where to access these resources, this is where URLs will help.
+
