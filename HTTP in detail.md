@@ -1,4 +1,4 @@
-<h3>HTTP HTTPS</h3>
+<h3>HTTP / HTTPS</h3>
 
 What is HTTP(S)?
 What is HTTP? (HyperText Transfer Protocol)
