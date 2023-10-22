@@ -146,4 +146,22 @@ This is used for deleting information/records from a web server.
 
 **Questions / Answers**
 
+What method would be used to create a new user account?
+
+POST
+
+What method would be used to update your email address?
+
+PUT
+
+What method would be used to remove a picture you've uploaded to your account?
+
+DELETE
+
+What method would be used to view a news article?
+
+GET
+
+<h3>HTTP Status Codes</h3>
+
 
