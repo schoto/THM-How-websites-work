@@ -230,5 +230,7 @@ What response code might you receive if you try to edit your profile without log
 
 401
 
+<h3>Headers</h3>
+
 
 
