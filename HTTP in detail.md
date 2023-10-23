@@ -186,6 +186,32 @@ Used to inform the client that there was an error with their request.
 
 This is reserved for errors happening on the server-side and usually indicate quite a major problem with the server handling the request.
 
+<h3>Common HTTP Status Codes:</h3>
+
+There are a lot of different HTTP status codes and that's not including the fact that applications can even define their own, we'll go over the most common HTTP responses you are likely to come across:
+
+<h4>200 - OK</h4>	The request was completed successfully.
+
+<h4>201 - Created</h4>	A resource has been created (for example a new user or new blog post).
+
+<h4>301 - Moved Permanently</h4> This redirects the client's browser to a new webpage or tells search engines that the page has moved somewhere else and to look there instead.
+
+<h4>302 - Found</h4> Similar to the above permanent redirect, but as the name suggests, this is only a temporary change and it may change again in the near future.
+
+<h4>400 - Bad Request</h4> This tells the browser that something was either wrong or missing in their request. This could sometimes be used if the web server resource that is being requested expected a certain parameter that the client didn't send.
+
+<h4>401 - Not Authorised</h4> You are not currently allowed to view this resource until you have authorised with the web application, most commonly with a username and password.
+
+<h4>403 - Forbidden</h4> You do not have permission to view this resource whether you are logged in or not.
+
+<h4>405 - Method Not Allowed</h4> The resource does not allow this method request, for example, you send a GET request to the resource /create-account when it was expecting a POST request instead.
+
+<h4>404 - Page Not Found</h4> The page/resource you requested does not exist.
+
+<h4>500 - Internal Service Error</h4> The server has encountered some kind of error with your request that it doesn't know how to handle properly.
+
+<h4>503 - Service Unavailable</h4> This server cannot handle your request as it's either overloaded or down for maintenance.
+
 
 
 
