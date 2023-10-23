@@ -170,6 +170,22 @@ In the previous task, you learnt that when a HTTP server responds, the first lin
 
 These are sent to tell the client the first part of their request has been accepted and they should continue sending the rest of their request. These codes are no longer very common.
 
+<h4>200-299 - Success</h4>
+
+This range of status codes is used to tell the client their request was successful.
+
+<h4>300-399 - Redirection</h4>	
+
+These are used to redirect the client's request to another resource. This can be either to a different webpage or a different website altogether.
+
+<h4>400-499 - Client Errors</h4>
+
+Used to inform the client that there was an error with their request.
+
+<h4>500-599 - Server Errors</h4>	
+
+This is reserved for errors happening on the server-side and usually indicate quite a major problem with the server handling the request.
+
 
 
 
