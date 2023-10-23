@@ -212,6 +212,23 @@ There are a lot of different HTTP status codes and that's not including the fact
 
 <h4>503 - Service Unavailable</h4> This server cannot handle your request as it's either overloaded or down for maintenance.
 
+**Questions / Answers**
+
+What response code might you receive if you've created a new user or blog post article?
+
+201
+
+What response code might you receive if you've tried to access a page that doesn't exist?
+
+404
+
+What response code might you receive if the web server cannot access its database and the application crashes?
+
+503
+
+What response code might you receive if you try to edit your profile without logging in first?
+
+401
 
 
 
