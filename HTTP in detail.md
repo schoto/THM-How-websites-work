@@ -164,4 +164,12 @@ GET
 
 <h3>HTTP Status Codes</h3>
 
+In the previous task, you learnt that when a HTTP server responds, the first line always contains a status code informing the client of the outcome of their request and also potentially how to handle it. These status codes can be broken down into 5 different ranges:
+
+<h4>100-199 - Information Response</h4>
+
+These are sent to tell the client the first part of their request has been accepted and they should continue sending the rest of their request. These codes are no longer very common.
+
+
+
 
