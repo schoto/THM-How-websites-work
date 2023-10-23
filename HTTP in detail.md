@@ -232,5 +232,5 @@ What response code might you receive if you try to edit your profile without log
 
 <h3>Headers</h3>
 
-
+Headers are additional bits of data you can send to the web server when making requests.
 
