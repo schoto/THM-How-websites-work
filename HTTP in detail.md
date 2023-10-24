@@ -277,3 +277,45 @@ What header tells the web server which website is being requested?
 
 Host
 
+<h3>Cookies</h3>
+
+You've probably heard of cookies before, they're just a small piece of data that is stored on your computer. Cookies are saved when you receive a "Set-Cookie" header from a web server. Then every further request you make, you'll send the cookie data back to the web server. Because HTTP is stateless (doesn't keep track of your previous requests), cookies can be used to remind the web server who you are, some personal settings for the website or whether you've been to the website before. Let's take a look at this as an example HTTP request:
+
+![cookies](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/a6499f13-4038-41d0-a40b-afd448c9f187)
+
+Cookies can be used for many purposes but are most commonly used for website authentication. The cookie value won't usually be a clear-text string where you can see the password, but a token (unique secret code that isn't easily humanly guessable).
+
+Viewing Your Cookies
+
+You can easily view what cookies your browser is sending to a website by using the developer tools, in your browser. If you're not sure how to get to the developer tools in your browser, click on the "View Site" button at the top of this task for a how-to guide.
+
+Once you have developer tools open, click on the "Network" tab. This tab will show you a list of all the resources your browser has requested. You can click on each one to receive a detailed breakdown of the request and response. If your browser sent a cookie, you will see these on the "Cookies" tab of the request.
+
+Which header is used to save cookies to your computer?
+
+Set-Cookies
+
+<h3>Making Requests</h3>
+
+**Questions / Answers**
+
+Make a GET request to /room
+
+```THM{YOU'RE_IN_THE_ROOM}```
+
+Make a GET request to /blog and using the gear icon set the id parameter to 1 in the URL field
+
+```THM{YOU_FOUND_THE_BLOG}```
+
+Make a DELETE request to /user/1
+
+```THM{USER_IS_DELETED}```
+
+Make a PUT request to /user/2 with the username parameter set to admin
+
+```THM{USER_HAS_UPDATED}```
+
+POST the username of thm and a password of letmein to /login
+
+```THM{HTTP_REQUEST_MASTER}```
+
