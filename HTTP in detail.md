@@ -265,3 +265,15 @@ Content-Encoding: What method has been used to compress the data to make it smal
 
 **Questions / Answers**
 
+What header tells the web server what browser is being used?
+
+User-Agent
+
+What header tells the browser what type of data is being returned?
+
+Content-Type
+
+What header tells the web server which website is being requested?
+
+Host
+
