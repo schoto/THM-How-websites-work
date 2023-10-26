@@ -84,5 +84,5 @@ Which Burp tool would we use if we wanted to bruteforce a login form?
 
 Intruder
 
-<h4>Getting started</h4>
+<h4>Installation</h4>
 
