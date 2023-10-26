@@ -12,3 +12,5 @@ We will also be introducing the core of the Burp Suite framework: the Burp Proxy
 
 Let's begin!
 
+<h4>What is the Burp Suite</h4>
+
