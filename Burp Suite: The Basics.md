@@ -86,3 +86,7 @@ Intruder
 
 <h4>Installation</h4>
 
+I don't really need to install Burp Suite, because it's already installed on AttackBox on TryHackMe. Just gonna go ahead and skip it
+
+<h4>Dashboard</h4>
+
