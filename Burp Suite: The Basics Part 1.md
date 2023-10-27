@@ -131,7 +131,33 @@ These are extremely useful if you're ever stuck and don't know what a feature do
 
 <h4>Navigation</h4>
 
+Navigating around the Burp Suite GUI by default is done entirely using the top menu bars:
 
+![burp6](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/18e887ef-9045-4275-ad9d-7046652ecbf0)
+
+These allow you to switch between modules (along the top row of the attached image). If the selected module has more than one sub-tab, then these can be selected using a second menu bar which appears directly below the original bar (the bottom row of the image above). It is common for module-specific settings to be provided in these sub-tabs (as is the case with the Proxy Options above).
+
+Tabs can also be popped out into separate windows should you prefer to view multiple tabs separately. This can be done by clicking "Window" in the application menu at the top of the screen, then choosing to "Detach" tabs:
+
+![burp7](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/d463610d-77c5-46ad-8a60-a34eac74e405)
+
+These can be reattached in the same way.
+
+In addition to the menu bar, Burp Suite also has keyboard shortcuts that allow quick navigation to key tabs. By default, these are:
+
+Shortcut ||||||||||| Does
+
+```Ctrl + Shift + D``` Switch to the Dashboard
+
+```Ctrl + Shift + T``` Switch to the Target tab
+
+```Ctrl + Shift + P``` Switch to the Proxy tab
+
+```Ctrl + Shift + I``` Switch to the Intruder tab
+
+```Ctrl + Shift + R``` Switch to the Repeater tab
+
+<h4>Options</h4>
 
 
 
