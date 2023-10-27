@@ -90,3 +90,48 @@ I don't really need to install Burp Suite, because it's already installed on Att
 
 <h4>Dashboard</h4>
 
+When we open Burp Suite and have accepted the terms and conditions, we are met with a window asking us to select the project type.
+
+This window doesn't give us many options in Burp Community. Burp Pro would allow us to save our work to the disk or load a previously saved project at this point. All we can do here is click "Next", however.
+
+The next window allows us to choose a configuration for Burp Suite. Leaving this at the default is perfect for most situations:
+
+Click "Start Burp", and the main Burp Suite interface will open!
+
+The first time you open Burp Suite, you may be presented with a screen of training options. These are well worth reading through if you get the time.
+
+If not (and in any subsequent sessions regardless), you will be presented with the slightly daunting Burp Dashboard:
+
+![burp1](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/f8ea06a5-ae23-4fb3-8973-8cf80234aa5e)
+
+Don't be alarmed if this doesn't make too much sense just yet -- it soon will!
+
+In short, the Dashboard interface is split into four quadrants:
+
+![burp2](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/e694dbad-35f0-4c99-bd23-f7e49727d9f0)
+
+1. The Tasks menu allows us to define background tasks that Burp Suite will run whilst we use the application. The Pro version would also allow us to create on-demand scans. The default "Live Passive Crawl" (which automatically logs the pages we visit) will be more than suitable for our uses in this module.
+
+2. The Event log tells us what Burp Suite is doing (e.g. starting the Proxy), as well as information about any connections that we are making through Burp.
+
+3. The Issue Activity section is exclusive to Burp Pro. It won't give us anything using Burp Community, but in Burp Professional it would list all of the vulnerabilities found by the automated scanner. These would be ranked by severity and filterable by how sure Burp is that the component is vulnerable.
+
+4. The Advisory section gives more information about the vulnerabilities found, as well as references and suggested remediations. These could then be exported into a report.
+Clicking on one of the example vulnerabilities in the Issue Activity section gives us an idea of what this looks like:
+
+![burp3](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/7c88b7fa-e84b-4df3-af18-29ac5fbe21a4)
+
+Throughout the various tabs and windows of Burp Suite, you will find little help icons: a question mark within a circle. ![burp4](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/22b4cf2d-b4cc-48e1-a514-4a40e31ed00c)
+
+Clicking on these will open a new window containing help for the section, for example:
+
+![burp5](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/b298a986-bfc3-4f58-b0a5-fab7aea8c0aa)
+
+These are extremely useful if you're ever stuck and don't know what a feature does, so make good use of them!
+
+<h4>Navigation</h4>
+
+
+
+
+
