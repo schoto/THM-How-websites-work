@@ -183,6 +183,34 @@ The Search feature of the settings page is a relatively new addition; however, i
 
 Familiarise yourself with the range of configurable options in Burp Suite, then complete the following exercises.
 
+**Questions / Answers**
+
+Change the Burp Suite theme to dark mode
+
+Done
+
+In which category can you find reference to a "Cookie jar"?
+
+Sessions
+
+In which base category can you find the "Updates" sub-category, which controls the Burp Suite update behaviour?
+
+Suite
+
+What is the name of the sub-category which allows you to change the keybindings for shortcuts in Burp Suite ?
+
+Hotkeys
+
+If we have uploaded Client-Side TLS certificates, can we override these on a per-project basis (Aye/Nay)?
+
+Aye
+
+
+There are many more configuration options available. Take the time to read through them.
+
+In the next section, we will cover the Burp Proxy -- a much more hands-on aspect of the room.
+
+End of the first part ;)
 
 
 
