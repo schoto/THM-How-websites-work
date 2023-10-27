@@ -163,5 +163,27 @@ Before we start learning about the Burp Proxy, let's take a look at the options 
 
 There are two types of settings: Global Settings (also called User Settings), and Project Settings.
 
+User settings affect the Burp Suite installation as a whole and will be applied every time we start the application. By contrast, Project Settings only apply to the current project. Given that we can't save projects in Burp Suite Community Edition, this effectively means that any project options we set will be lost every time we close Burp.
+
+Many options are provided as both global settings (which are used to set a baseline) and project settings (which can be used to override the equivalent global setting).
+
+Note: The settings system in Burp Suite was recently completely revamped. This task has been updated to use the new version. Please ensure that you are using the latest version of Burp Suite.
+
+The Settings window can be accessed by clicking on the "Settings" button in the top navigation bar:
+
+![settingsburp](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/3427c204-1980-4dd9-b3d0-9973f53e8bc7)
+
+On the left hand side we have a menu containing options to change the scope between all settings, user settings, and project settings, as well as search for specific settings, or select them by category.
+
+It should be noted that many of the tools in Burp Suite offer shortcuts to specific categories of settings. For example, the Proxy tool includes a "Proxy settings" button which will open the Settings window directly to the section relevant to the proxy.
+
+![set burp2](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/8940bfd0-ad63-47f6-bb36-e638efc2725c)
+
+The Search feature of the settings page is a relatively new addition; however, it is absolutely invaluable, allowing us to search for settings using keywords.
+
+Familiarise yourself with the range of configurable options in Burp Suite, then complete the following exercises.
+
+
+
 
 
