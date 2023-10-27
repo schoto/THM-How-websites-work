@@ -159,5 +159,9 @@ Shortcut ||||||||||| Does
 
 <h4>Options</h4>
 
+Before we start learning about the Burp Proxy, let's take a look at the options available for configuring Burp Suite.
+
+There are two types of settings: Global Settings (also called User Settings), and Project Settings.
+
 
 
