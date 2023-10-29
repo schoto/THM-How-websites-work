@@ -22,3 +22,35 @@ Burp will also capture and log WebSocket communication, which, again, can be exc
 
 The logs can be viewed by going to the "HTTP history" and "WebSockets history" sub-tabs:
 
+![burp2](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/ae41205f-c1aa-4b55-926a-3a452fd95924)
+
+It is worth noting that any requests captured here can be sent to other tools in the framework by right-clicking them and choosing "Send to...". For example, we could take a previous HTTP request that has already been proxied to the target and send it to Repeater.
+
+Finally, there are also Proxy specific options, which in the Proxy Settings, accessible by clicking on the "Proxy Settings" button.
+
+These options give us a lot of control over how the proxy operates, so it is an excellent idea to familiarise yourself with these.
+
+For example, the proxy will not intercept server responses by default unless we explicitly ask it to on a per-request basis. We can override the default setting by selecting the "Intercept responses based on the following rules" checkbox and picking one or more rules. The ```Or Request Was Intercepted``` rule is good for catching responses to all requests that were intercepted by the proxy:
+
+![burp3](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/c49f57e6-2bc0-4feb-84bb-bb6196781e5f)
+
+The ```And URL Is in target scope``` is another very good default rule; we will look at scoping later in this room.
+
+You can make your own rules for most of the Proxy options, so this is one section where looking around and experimenting will serve you very well indeed!
+
+Another particularly useful section of this sub-tab is the "Match and Replace" section; this allows you to perform regexes on incoming and outgoing requests. For example, you can automatically change your user agent to emulate a different web browser in outgoing requests or remove all cookies being set in incoming requests. Again, you are free to make your own rules here.
+
+**Questions / Answers**
+
+Which button would we choose to send an intercepted request to the target in Burp Proxy?
+
+```Forward```
+
+[Research] What is the default keybind for this?
+
+Note: Assume you are using Windows or Linux (i.e. swap Cmd for Ctrl).
+
+```Ctrl+F```
+
+<h4>Connecting through the Proxy (FoxyProxy)</h4>
+
