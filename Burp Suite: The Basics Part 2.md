@@ -10,3 +10,15 @@ Note: You do not need to follow along with this task -- just read the informatio
 
 When we first open the Proxy tab, Burp gives us a bunch of useful information and background reading. This information is well worth reading through; however, the real magic happens after we capture a request:
 
+![burp1](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/9300eeb4-c605-4863-9048-bb8fda16c6a4)
+
+With the proxy active, a request was made to the TryHackMe website. At this point, the browser making the request will hang, and the request will appear in the Proxy tab giving us the view shown in the screenshot above. We can then choose to forward or drop the request (potentially after editing it). We can also do various other things here, such as sending the request to one of the other Burp modules, copying it as a cURL command, saving it to a file, and many others.
+
+When we have finished working with the Proxy, we can click the "Intercept is on" button to disable the Intercept, which will allow requests to pass through the proxy without being stopped.
+
+Burp Suite will still (by default) be logging requests made through the proxy when the intercept is off. This can be very useful for going back and analysing prior requests, even if we didn't specifically capture them when they were made.
+
+Burp will also capture and log WebSocket communication, which, again, can be exceedingly helpful when analysing a web app.
+
+The logs can be viewed by going to the "HTTP history" and "WebSockets history" sub-tabs:
+
