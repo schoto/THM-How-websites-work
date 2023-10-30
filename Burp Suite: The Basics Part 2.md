@@ -54,3 +54,10 @@ Note: Assume you are using Windows or Linux (i.e. swap Cmd for Ctrl).
 
 <h4>Connecting through the Proxy (FoxyProxy)</h4>
 
+You've seen the theory; now it's time to start using the proxy for yourself.
+
+There are two ways to proxy our traffic through Burp Suite.
+
+We could use the embedded browser (we will cover this in a later task).
+We can configure our local web browser to proxy our traffic through Burp; this is more common and so will be the focus of this task.
+
