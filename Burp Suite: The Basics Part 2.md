@@ -118,6 +118,27 @@ Remember: Whilst you are connected to the proxy and have the Proxy Intercept swi
 **Questions / Answers**
 
 
+Read through the options in the right-click menu.
+
+There is one particularly useful option that allows you to intercept and modify the response to your request.
+
+What is this option?
+
+Note: The option is in a dropdown sub-menu.
+
+```Response to this request```
+
+Bonus Question -- Optional Try installing FoxyProxy standard and have a look at the pattern matching features.
+
+<h4>Proxying HTTPS</h4>
+
+Note: The AttackBox is already configured to solve the problem posed in this task. If you are using the AttackBox and don't wish to read through the information here, you can skip to the next task.
+
+I already have AttackBox, so I'm gonna go ahead and skip this section
+
+<h4>The Burp Suite Browser</h4>
+
+If the last few tasks seemed overly complex, rest assured, this topic will be a lot simpler.
 
 
 
