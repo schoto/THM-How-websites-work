@@ -65,3 +65,61 @@ The Burp Proxy works by opening a web interface on ```127.0.0.1:8080``` (by defa
 
 Note: All instructions will be given with Firefox in mind, as this is the default browser for both Kali Linux and the TryHackMe AttackBox. If you are using another browser locally then you are advised to use the AttackBox, or you may otherwise need to find alternative methods to those presented in this task. If you can't get the proxy working in your local browser and do not want to use the AttackBox, then you may wish to skip ahead to the Burp Suite Browser task.
 
+There are two versions of FoxyProxy: Basic and Standard. Both versions allow you to change your proxy settings on the fly; however, FoxyProxy Standard gives you a lot more control over what traffic gets sent through the proxy. For example, it will allow you to set pattern matching rules to determine whether a request should be proxied or not: this is more complicated than the simple proxy offered by FoxyProxy basic.
+
+The basic edition is more than adequate for our usage. It is pre-installed and configured in the Firefox browser of the AttackBox, so if you are using the AttackBox, please feel free to skip ahead to the last section of this task.
+
+If you are using your own machine, you can download FoxyProxy Basic here --> https://addons.mozilla.org/en-US/firefox/addon/foxyproxy-basic/
+
+Once installed, a button should appear at the top right of the screen which allows you to access your proxy configurations:
+
+![foxy1](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/02fd6974-ea09-407f-81e6-ad2f09aef191)
+
+There are no default configurations, so let's click on the "Options" button to create our Burp Proxy config.
+
+This will open a new browser tab with the FoxyProxy options page:
+
+![foxy2](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/22f86dcf-5139-40e4-b7f4-5524ede9040c)
+
+Click on the "Add" button and fill in the following values:
+
+```
+Title: Burp (or anything else you prefer)
+
+Proxy IP: 127.0.0.1
+
+Port: 8080
+```
+
+![foxy3](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/b7348823-93ea-4eb2-af43-9f0010602632)
+
+Now click "Save".
+
+When you click on the FoxyProxy icon at the top of the screen, you will see that that there is a configuration available for Burp:
+
+![foxy4](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/2c3cd7b3-21a2-4942-aaa4-b948eb884016)
+
+If we click on the "Burp" config, our browser will start directing all of our traffic through ```127.0.0.1:8080```. Be warned: if Burp Suite is not running, your browser will not be able to make any requests when this config is activated!
+
+Activate this config now -- the icon in the menu should change to indicate that we have a proxy running: ![foxy6](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/c2ce0dd8-3c41-4d90-b1ee-cf8b23f91d30)
+
+Next, switch over to Burp Suite and make sure the Intercept is On:
+
+![foxy7](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/4f9f2f78-243b-441a-8dc3-fb3ac1adddd2)
+
+Now, try accessing the homepage for ```http://MACHINE_IP/``` in Firefox. Your browser should hang, and your proxy will populate with the request headers.
+
+Congratulations, you just intercepted your first request!
+
+From here, you can choose to forward or drop the request. Alternatively, you could send it to another tool or perform any number of other actions by right-clicking on the request and selecting an option from the right-click menu.
+
+Remember: Whilst you are connected to the proxy and have the Proxy Intercept switched on, your browser will hang whenever you make a request. A very common mistake when you are learning to use Burp Suite (and indeed, later on!) is to accidentally leave the intercept switched on and ergo be unable to make any web requests through your browser. If your browser is hanging and you don't know why: check your proxy!
+
+**Questions / Answers**
+
+
+
+
+
+
+
