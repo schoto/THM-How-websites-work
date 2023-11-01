@@ -140,6 +140,8 @@ I already have AttackBox, so I'm gonna go ahead and skip this section
 
 If the last few tasks seemed overly complex, rest assured, this topic will be a lot simpler.
 
+In addition to giving us the option to modify our regular web browser to work with the proxy, Burp Suite also includes a built-in Chromium browser that is pre-configured to use the proxy without any of the modifications we just had to do.
+
 
 
 
