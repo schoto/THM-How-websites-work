@@ -188,7 +188,9 @@ We just chose to disable logging for out of scope traffic, but the proxy will st
 
 With this option selected, the proxy will completely ignore anything that isn't in the scope, vastly cleaning up the traffic coming through Burp.
 
+<h4>Site Map and Issue Definitions</h4>
 
+Control of the scope may be the most useful aspect of the Target tab, but it's by no means the only use for this section of Burp.
 
 
 
