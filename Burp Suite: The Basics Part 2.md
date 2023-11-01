@@ -164,6 +164,11 @@ There are two simple solutions to this:
 
 Be aware that you will need to do this if using the embedded browser on the AttackBox.
 
+---------------------------------------------------------
+
+Finally, we come to one of the most important parts of using the Burp Proxy: Scoping.
+
+
 
 
 
