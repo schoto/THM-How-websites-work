@@ -142,6 +142,29 @@ If the last few tasks seemed overly complex, rest assured, this topic will be a 
 
 In addition to giving us the option to modify our regular web browser to work with the proxy, Burp Suite also includes a built-in Chromium browser that is pre-configured to use the proxy without any of the modifications we just had to do.
 
+Whilst this may seem ideal, it is not as commonly used as the process detailed in the previous few tasks. People tend to stick with their own browser as it gives them a lot more customisability; however, both are perfectly valid choices.
+
+We can start the Burp Browser with the "Open Browser" button in the proxy tab:
+
+![burp123](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/a5379e43-5f4a-42f1-a798-250f4e92b098)
+
+A Chromium window will now pop up. Any requests we make in this will go through the proxy.
+
+Note: There are many settings to do with the Burp Browser in the Project options and User options tabs -- make sure to go look at them!
+
+If we are running on Linux as the root user (as we are with the AttackBox), Burp Suite is unable to create a sandbox environment to start the Burp Browser in, causing it to throw an error and die:
+
+![123burp](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/d0b45bea-f96c-423a-b4eb-966e76730c44)
+
+There are two simple solutions to this:
+
+- The smart option: We could create a new user and run Burp Suite under a low privilege account.
+
+- The easy option: We could go to Project options -> Misc -> Embedded Browser and check the Allow the embedded browser to run without a sandbox option. Checking this option will allow the browser to start, but be aware that it is disabled by default for security reasons: if we get compromised using the browser, then an attacker will have access to our entire machine. On the training environment of the AttackBox this is unlikely (and isn't a huge issue even if it does happen), but keep it in mind if you try this on a local installation of Burp Suite.
+
+Be aware that you will need to do this if using the embedded browser on the AttackBox.
+
+
 
 
 
