@@ -166,7 +166,27 @@ Be aware that you will need to do this if using the embedded browser on the Atta
 
 ---------------------------------------------------------
 
+<h4>Scoping and Targetting</h4>
+
 Finally, we come to one of the most important parts of using the Burp Proxy: Scoping.
+
+It can get extremely tedious having Burp capturing all of our traffic. When it logs everything (including traffic to sites we aren't targeting), it muddies up logs we may later wish to send to clients. In short, allowing Burp to capture everything can quickly become a massive pain.
+
+What's the solution? Scoping.
+
+Setting a scope for the project allows us to define what gets proxied and logged. We can restrict Burp Suite to only target the web application(s) that we want to test. The easiest way to do this is by switching over to the "Target" tab, right-clicking our target from our list on the left, then choosing "Add To Scope". Burp will then ask us whether we want to stop logging anything which isn't in scope -- most of the time we want to choose "yes" here.
+
+![burpgif](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/b8a75d95-206d-4e85-8f16-98778fa5056a)
+
+We can now check our scope by switching to the "Scope" sub-tab (as shown in the GIF above).
+
+The Scope Settings window allows us to control what we are targeting by either Including or Excluding domains / IPs. This is a very powerful section, so it's well worth taking the time to get accustomed to using it.
+
+We just chose to disable logging for out of scope traffic, but the proxy will still be intercepting everything. To turn this off, we need to go into the Proxy Options sub-tab and select ```And URL Is in target scope``` from the Intercept Client Requests section:
+
+![burpgif1](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/1755f1b0-4b3a-4d0d-9bf3-8afa13fb7200)
+
+
 
 
 
