@@ -186,6 +186,8 @@ We just chose to disable logging for out of scope traffic, but the proxy will st
 
 ![burpgif1](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/1755f1b0-4b3a-4d0d-9bf3-8afa13fb7200)
 
+With this option selected, the proxy will completely ignore anything that isn't in the scope, vastly cleaning up the traffic coming through Burp.
+
 
 
 
