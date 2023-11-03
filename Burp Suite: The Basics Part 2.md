@@ -220,9 +220,4 @@ What is the typical severity of a Vulnerable JavaScript dependency?
 
 Low
 
-<h4>Example Attack</h4>
-
-Having looked at how to set up and configure our proxy, let's go through a simplified real-world example.
-
-
 
