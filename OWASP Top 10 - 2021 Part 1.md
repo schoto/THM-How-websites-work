@@ -24,3 +24,5 @@ This room breaks each OWASP topic down and includes details on the vulnerabiliti
 
 The room has been designed for beginners and assumes no previous security knowledge.
 
+<h4>Broken Access Control</h4>
+
