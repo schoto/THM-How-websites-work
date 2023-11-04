@@ -26,3 +26,13 @@ The room has been designed for beginners and assumes no previous security knowle
 
 <h4>Broken Access Control</h4>
 
+Websites have pages that are protected from regular visitors. For example, only the site's admin user should be able to access a page to manage other users. If a website visitor can access protected pages they are not meant to see, then the access controls are broken.
+
+A regular visitor being able to access protected pages can lead to the following:
+
+- Being able to view sensitive information from other users
+
+- Accessing unauthorized functionality
+
+Simply put, broken access control allows attackers to bypass authorisation, allowing them to view sensitive data or perform tasks they aren't supposed to.
+
