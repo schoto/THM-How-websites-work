@@ -36,3 +36,7 @@ A regular visitor being able to access protected pages can lead to the following
 
 Simply put, broken access control allows attackers to bypass authorisation, allowing them to view sensitive data or perform tasks they aren't supposed to.
 
+For example, a vulnerability was found in 2019, where an attacker could get any single frame from a Youtube video marked as private. The researcher who found the vulnerability showed that he could ask for several frames and somewhat reconstruct the video. Since the expectation from a user when marking a video as private would be that nobody had access to it, this was indeed accepted as a broken access control vulnerability.
+
+<h4>Broken Access Control (IDOR Challenge)</h4>
+
