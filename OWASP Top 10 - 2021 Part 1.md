@@ -209,6 +209,3 @@ What is the admin's plaintext password?
 Log in as the admin. What is the flag?
 
 ```THM{Yzc2YjdkMjE5N2VjMzNhOTE3NjdiMjdl}```
-
-<h4>Injection</h4>
-
