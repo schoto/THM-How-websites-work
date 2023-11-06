@@ -186,4 +186,6 @@ It's now time to put what you've learnt into practice! For this challenge, conne
 
 **Questions / Answers**
 
+Have a look around the web app. The developer has left themselves a note indicating that there is sensitive data in a specific directory. 
+
 
