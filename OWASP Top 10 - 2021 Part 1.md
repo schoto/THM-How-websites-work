@@ -166,3 +166,24 @@ When it comes to hash cracking, Kali comes pre-installed with various tools. If 
 
 Instead, we will be using the online tool: Crackstation. This website is extremely good at cracking weak password hashes. For more complicated hashes, we would need more sophisticated tools; however, all of the crackable password hashes used in today's challenge are weak MD5 hashes, which Crackstation should handle very nicely.
 
+When we navigate to the website, we are met with the following interface:
+
+![cryptog1](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/6392bbb4-fb89-4112-8d92-c4f6307181e8)
+
+Let's try pasting the password hash for Joy Paulson, which we found in the previous task (```5f4dcc3b5aa765d61d8327deb882cf99```). We solve the Captcha, then click the "Crack Hashes" button:
+
+![cryptog2](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/00cfb3a0-e9de-4a0e-94b6-44f84f80edc2)
+
+We see that the hash was successfully broken, and the user's password was "password". How secure!
+
+It's worth noting that Crackstation works using a massive wordlist. If the password is not in the wordlist, then Crackstation will not be able to break the hash.
+
+The challenge is guided, so if Crackstation fails to break a hash in today's box, you can assume that the hash has been specifically designed not to be crackable.
+
+<h4>Cryptographic Failures (Challenge)</h4>
+
+It's now time to put what you've learnt into practice! For this challenge, connect to the web application at http://MACHINE_IP:81/.
+
+**Questions / Answers**
+
+
