@@ -100,9 +100,30 @@ Insecure design refers to vulnerabilities which are inherent to the application'
 
 **Insecure Password Resets**
 
-A good example of such vulnerabilities occurred on Instagram a while ago. Instagram allowed users to reset their forgotten passwords by sending them a 6-digit code to their mobile number via SMS for validation. If an attacker wanted to access a victim's account, he could try to brute-force the 6-digit code. As expected, this was not directly possible as Instagram had rate-limiting implemented so that after 250 attempts, the user would be blocked from trying further.
+A good example of such vulnerabilities occurred on Instagram a while ago. Instagram allowed users to reset their forgotten passwords by sending them a 6-digit code to their mobile number via SMS for validation. If an attacker wanted to access a victim's account, he could try to brute-force the 6-digit code. As expected, this was not directly possible as Instagram had rate-limiting implemented so that after 2
+50 attempts, the user would be blocked from trying further.
 
 ![insec1](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/2367ee39-d142-44ee-9bf6-8e91382d779d)
 
+However, it was found that the rate-limiting only applied to code attempts made from the same IP. If an attacker had several different IP addresses from where to send requests, he could now try 250 codes per IP. For a 6-digit code, you have a million possible codes, so an attacker would need 1000000/250 = 4000 IPs to cover all possible codes. This may sound like an insane amount of IPs to have, but cloud services make it easy to get them at a relatively small cost, making this attack feasible.
 
+![insec2](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/6990d83f-b8dd-4027-98d4-b881146f9c37)
+
+Notice how the vulnerability is related to the idea that no user would be capable of using thousands of IP addresses to make concurrent requests to try and brute-force a numeric code. The problem is in the design rather than the implementation of the application in itself.
+
+Since insecure design vulnerabilities are introduced at such an early stage in the development process, resolving them often requires rebuilding the vulnerable part of the application from the ground up and is usually harder to do than any other simple code-related vulnerability. The best approach to avoid such vulnerabilities is to perform threat modelling at the early stages of the development lifecycle.
+
+**Practical Example**
+
+Navigate to http://machine_ip:85 and get into joseph's account. This application also has a design flaw in its password reset mechanism. Can you figure out the weakness in the proposed design and how to abuse it?
+
+Try to reset joseph's password. Keep in mind the method used by the site to validate if you are indeed joseph.
+
+What is the value of the flag in joseph's account?
+
+![thm1](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/6353e38a-a492-4a84-90bd-8eb084441841)
+
+```THM{Not_3ven_c4tz_c0uld_sav3_U!}```
+
+<h3>Security Misconfiguration</h3>
 
