@@ -178,5 +178,5 @@ Modify the code to read the contents of the ```app.py``` file, which contains th
 
 ```THM{Just_a_tiny_misconfiguration}```
 
-
+<h3>Vulnerable and Outdated Components</h3>
 
