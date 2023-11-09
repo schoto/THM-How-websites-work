@@ -129,3 +129,10 @@ What is the value of the flag in joseph's account?
 
 Security Misconfigurations are distinct from the other Top 10 vulnerabilities because they occur when security could have been appropriately configured but was not. Even if you download the latest up-to-date software, poor configurations could make your installation vulnerable.
 
+Security misconfigurations include:
+
+- Poorly configured permissions on cloud services, like S3 buckets.
+- Having unnecessary features enabled, like services, pages, accounts or privileges.
+- Default accounts with unchanged passwords.
+- Error messages that are overly detailed and allow attackers to find out more about the system.
+- Not using HTTP security headers.
