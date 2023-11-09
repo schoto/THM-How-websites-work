@@ -136,3 +136,47 @@ Security misconfigurations include:
 - Default accounts with unchanged passwords.
 - Error messages that are overly detailed and allow attackers to find out more about the system.
 - Not using HTTP security headers.
+
+This vulnerability can often lead to more vulnerabilities, such as default credentials giving you access to sensitive data, XML External Entities (XXE) or command injection on admin pages.
+
+For more info, look at the OWASP top 10 entry for Security Misconfiguration --> https://owasp.org/Top10/A05_2021-Security_Misconfiguration/
+
+**Debugging Interfaces**
+
+A common security misconfiguration concerns the exposure of debugging features in production software. Debugging features are often available in programming frameworks to allow the developers to access advanced functionality that is useful for debugging an application while it's being developed. Attackers could abuse some of those debug functionalities if somehow, the developers forgot to disable them before publishing their applications.
+
+One example of such a vulnerability was allegedly used when Patreon got hacked in 2015. Five days before Patreon was hacked, a security researcher reported to Patreon that he had found an open debug interface for a Werkzeug console. Werkzeug is a vital component in Python-based web applications as it provides an interface for web servers to execute the Python code. Werkzeug includes a debug console that can be accessed either via URL on ```/console```, or it will also be presented to the user if an exception is raised by the application. In both cases, the console provides a Python console that will run any code you send to it. For an attacker, this means he can execute commands arbitrarily.
+
+![thm1](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/9368f9bf-09d9-4411-a34f-514f1049dabd)
+
+**Practical example**
+
+This VM showcases a ```Security Misconfiguration``` as part of the OWASP Top 10 Vulnerabilities list.
+
+Navigate to ```http://machine_ip:86``` and try to exploit the security misconfiguration to read the application's source code.
+
+**Questions / Answers**
+
+Navigate to http://10.10.20.47:86/console to access the Werkzeug console.
+
+![console1](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/8b389395-1d8b-4518-8082-96b8d3b6dd89)
+
+
+Use the Werkzeug console to run the following Python code to execute the ```ls -l``` command on the server:
+
+```
+import os; print(os.popen("ls -l").read())
+```
+
+![console2](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/f4e639f6-5e7e-4e55-8a06-e48c4f4c2e6d)
+
+What is the database file name (the one with the .db extension) in the current directory?
+
+```todo.db```
+
+Modify the code to read the contents of the ```app.py``` file, which contains the application's source code. What is the value of the ```secret_flag``` variable in the source code?
+
+```THM{Just_a_tiny_misconfiguration}```
+
+
+
