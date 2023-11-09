@@ -127,3 +127,5 @@ What is the value of the flag in joseph's account?
 
 <h3>Security Misconfiguration</h3>
 
+Security Misconfigurations are distinct from the other Top 10 vulnerabilities because they occur when security could have been appropriately configured but was not. Even if you download the latest up-to-date software, poor configurations could make your installation vulnerable.
+
