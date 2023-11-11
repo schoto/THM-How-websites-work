@@ -188,3 +188,5 @@ As you can see, this would be quite devastating because it requires very little 
 
 <h3>Vulnerable and Outdated Components - Exploit</h3>
 
+Recall that since this is about known vulnerabilities, most of the work has already been done for us. Our main job is to find out the information of the software and research it until we can find an exploit. Let's go through that with an example web application.
+
