@@ -54,6 +54,5 @@ What is the flag that you found in arthur's account?
 
 ```d9ac0f7db4fda460ac3edeb75d75e16e```
 
-<h3>Software and Data Integrity Failures</h3>\
-
+<h3>Software and Data Integrity Failures</h3>
 
