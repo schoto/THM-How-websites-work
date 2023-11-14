@@ -122,4 +122,66 @@ Let's think of how web applications maintain sessions. Usually, when a user logs
 
 ![susan](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/b920789c-eb9c-4226-862e-d5504a804128)
 
+For example, if you were creating a webmail application, you could assign a cookie to each user after logging in that contains their username. In subsequent requests, your browser would always send your username in the cookie so that your web application knows what user is connecting. This would be a terrible idea security-wise because, as we mentioned, cookies are stored on the user's browser, so if the user tampers with the cookie and changes the username, they could potentially impersonate someone else and read their emails! This application would suffer from a data integrity failure, as it trusts data that an attacker can tamper with.
+
+One solution to this is to use some integrity mechanism to guarantee that the cookie hasn't been altered by the user. To avoid re-inventing the wheel, we could use some token implementations that allow you to do this and deal with all of the cryptography to provide proof of integrity without you having to bother with it. One such implementation is JSON Web Tokens (JWT).
+
+JWTs are very simple tokens that allow you to store key-value pairs on a token that provides integrity as part of the token. The idea is that you can generate tokens that you can give your users with the certainty that they won't be able to alter the key-value pairs and pass the integrity check. The structure of a JWT token is formed of 3 parts:
+
+![json](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/6d9f282b-a8ba-41f3-b89e-2b132cf5d3b0)
+
+The header contains metadata indicating this is a JWT, and the signing algorithm in use is HS256. The payload contains the key-value pairs with the data that the web application wants the client to store. The signature is similar to a hash, taken to verify the payload's integrity. If you change the payload, the web application can verify that the signature won't match the payload and know that you tampered with the JWT. Unlike a simple hash, this signature involves the use of a secret key held by the server only, which means that if you change the payload, you won't be able to generate the matching signature unless you know the secret key.
+
+Notice that each of the 3 parts of the token is simply plaintext encoded with base64. You can use this online tool --> https://appdevtools.com/base64-encoder-decoder to encode/decode base64. Try decoding the header and payload of the following token:
+
+```eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6Imd1ZXN0IiwiZXhwIjoxNjY1MDc2ODM2fQ.C8Z3gJ7wPgVLvEUonaieJWBJBYt5xOph2CpIhlxqdUw```
+
+Note: The signature contains binary data, so even if you decode it, you won't be able to make much sense of it anyways.
+
+**JWT and the None Algorithm**
+
+A data integrity failure vulnerability was present on some libraries implementing JWTs a while ago. As we have seen, JWT implements a signature to validate the integrity of the payload data. The vulnerable libraries allowed attackers to bypass the signature validation by changing the two following things in a JWT:
+
+- Modify the header section of the token so that the ```alg``` header would contain the value ```none```.
+- Remove the signature part.
+
+Taking the JWT from before as an example, if we wanted to change the payload so that the username becomes "admin" and no signature check is done, we would have to decode the header and payload, modify them as needed, and encode them back. Notice how we removed the signature part but kept the dot at the end.
+
+![json2](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/4c8f8441-1019-490a-b624-87619b9811fa)
+
+It sounds pretty simple! Let's walk through the process an attacker would have to follow in an example scenario. Navigate to http://MACHINE_IP:8089/ and follow the instructions in the questions below.
+
+**Questions / Answers**
+
+Try logging into the application as guest. What is guest's account password?
+
+```guest```
+
+
+If your login was successful, you should now have a JWT stored as a cookie in your browser. Press F12 to bring out the Developer Tools.
+
+Depending on your browser, you will be able to edit cookies from the following tabs:
+
+Firefox
+
+![firefox](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/66f376a5-f35f-4621-904d-96ee721060c8)
+
+Chrome
+
+![chrome](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/278346f9-3ec7-49aa-8fa1-781398d29751)
+
+What is the name of the website's cookie containing a JWT token?
+
+![jwt-session](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/0c6b72ba-621a-4d9e-b5ba-079c862c2915)
+
+```jwt-session```
+
+Use the knowledge gained in this task to modify the JWT token so that the application thinks you are the user "admin".
+
+What is the flag presented to the admin user?
+
+```THM{Dont_take_cookies_from_strangers}```
+
+<h3>Security Logging and Monitoring Failures</h3>
+
 
