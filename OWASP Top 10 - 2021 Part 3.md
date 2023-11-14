@@ -118,3 +118,5 @@ What is the SHA-256 hash of ```https://code.jquery.com/jquery-1.12.4.min.js```?
 
 <h3>Data Integrity Failures</h3>
 
+Let's think of how web applications maintain sessions. Usually, when a user logs into an application, they will be assigned some sort of session token that will need to be saved on the browser for as long as the session lasts. This token will be repeated on each subsequent request so that the web application knows who we are. These session tokens can come in many forms but are usually assigned via cookies. Cookies are key-value pairs that a web application will store on the user's browser and that will be automatically repeated on each request to the website that issued them.
+
