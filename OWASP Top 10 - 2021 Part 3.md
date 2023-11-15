@@ -266,3 +266,16 @@ Navigate to http://MACHINE_IP:8087/, where you'll find a simple web application.
 
 Explore the website. What is the only host allowed to access the admin area?
 
+![localhhost](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/4b5cea6e-a767-4e9e-8ee8-fdf843b55cfe)
+
+```localhost```
+
+Check the "Download Resume" button. Where does the server parameter point to?
+
+![wooo](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/a21ccac3-d825-4307-b46b-3325b653d259)
+
+```secure-file-storage.com```
+
+Using SSRF, make the application send the request to your AttackBox instead of the secure file storage. Are there any API keys in the intercepted request?
+
+```THM{Hello_Im_just_an_API_key}```
