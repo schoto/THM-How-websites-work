@@ -127,8 +127,3 @@ But why don't we put the 1=1?
 Well, as the email address is valid (which will return true), we do not need to force it to be true. Thus we are able to use '-- to bypass the login system. Note the 1=1 can be used when the email or username is not known or invalid.
 
 ```— fb364762a3c102b2db932069c0e6b78e738d4066```
-
-<h3>Who broke my lock?!</h3>
-
-![who broke my password](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/c79c8588-2986-406a-b125-9f4bd4fb9202)
-
