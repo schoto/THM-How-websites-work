@@ -65,3 +65,48 @@ With a basic understanding of how the website might be handling our input, we ca
 
 We'll go into a lot more detail about bypassing filters in later tasks.
 
+When files are uploaded to the server, a range of checks should be carried out to ensure that the file will not overwrite anything which already exists on the server. Common practice is to assign the file with a new name -- often either random, or with the date and time of upload added to the start or end of the original filename. Alternatively, checks may be applied to see if the filename already exists on the server; if a file with the same name already exists then the server will return an error message asking the user to pick a different file name. File permissions also come into play when protecting existing files from being overwritten. Web pages, for example, should not be writeable to the web user, thus preventing them from being overwritten with a malicious version uploaded by an attacker.
+
+If, however, no such precautions are taken, then we might potentially be able to overwrite existing files on the server. Realistically speaking, the chances are that file permissions on the server will prevent this from being a serious vulnerability. That said, it could still be quite the nuisance, and is worth keeping an eye out for in a pentest or bug hunting environment.
+Let's go through an example before you try this for yourself.
+
+In the following image we have a web page with an upload form:
+
+![demo](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/e72d542d-92f0-4d6f-b1c2-4fac2d366204)
+
+You may need to enumerate more than this for a real challenge; however, in this instance, let's just take a look at the source code of the page:
+
+![code demo](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/7273385a-c791-43fa-ae83-032f1ef3642c)
+
+Inside the red box, we see the code that's responsible for displaying the image that we saw on the page. It's being sourced from a file called "spaniel.jpg", inside a directory called "images".
+
+Now we know where the image is being pulled from -- can we overwrite it?
+
+Let's download another image from the internet and call it ```spaniel.jpg```. We'll then upload it to the site and see if we can overwrite the existing image:
+
+![dog demo](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/5df7d203-fbb0-4f26-8c49-1434effe11e7)
+
+![dog 2 demo](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/9c5568a5-cf66-4cf2-b3a6-060373ce248f)
+
+And our attack was successful! We managed to overwrite the original ```images/spaniel.jpg``` with our own copy.
+
+Now, let's put this into practice.
+
+Open your web browser and navigate to ```overwrite.uploadvulns.thm```. Your goal is to overwrite a file on the server with an upload of your own.
+
+**Questions / Answers**
+
+What is the name of the image file which can be overwritten?
+
+![demo2](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/c10af9d1-b137-48a7-a465-aa089e0f91ab)
+
+```mountains.jpg```
+
+Overwrite the image. What is the flag you receive?
+
+![thm](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/f92235c3-8571-4280-9e1f-d79945071cb0)
+
+```THM{OTBiODQ3YmNjYWZhM2UyMmYzZDNiZjI5}```
+
+<h3>Remote Code Execution</h3>
+
