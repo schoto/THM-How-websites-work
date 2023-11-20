@@ -195,3 +195,5 @@ What's the flag in the /var/www/ directory of the server?
 
 <h3>Filtering</h3>
 
+Up until now we have largely been ignoring the counter-defences employed by web developers to defend against file upload vulnerabilities. Every website that you've successfully attacked so far in this room has been completely insecure. It's time that changed. From here on out, we'll be looking at some of the defence mechanisms used to prevent malicious file uploads, and how to circumvent them.
+
