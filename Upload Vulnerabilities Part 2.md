@@ -69,9 +69,7 @@ We've covered in detail two ways to bypass a Client-Side file upload filter. Now
 
 What is the flag in /var/www/?
 
-``````
+```THM{NDllZDQxNjJjOTE0YWNhZGY3YjljNmE2}```
 
-
-
-
+<h3>Bypassing Server-Side Filtering: File Extensions</h3>
 
