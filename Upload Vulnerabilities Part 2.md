@@ -73,3 +73,6 @@ What is the flag in /var/www/?
 
 <h3>Bypassing Server-Side Filtering: File Extensions</h3>
 
+Time to turn things up another notch!
+Client-side filters are easy to bypass -- you can see the code for them, even if it's been obfuscated and needs processed before you can read it; but what happens when you can't see or manipulate the code? Well, that's a server-side filter. In short, we have to perform a lot of testing to build up an idea of what is or is not allowed through the filter, then gradually put together a payload which conforms to the restrictions.
+
