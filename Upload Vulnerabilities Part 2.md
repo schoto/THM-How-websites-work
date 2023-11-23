@@ -95,3 +95,71 @@ For the first part of this task we'll take a look at a website that's using a bl
 ?>
 ```
 
+In this instance, the code is looking for the last period (```.```) in the file name and uses that to confirm the extension, so that is what we'll be trying to bypass here. Other ways the code could be working include: searching for the first period in the file name, or splitting the file name at each period and checking to see if any blacklisted extensions show up. We'll cover this latter case later on, but in the meantime, let's focus on the code we've got here.
+
+We can see that the code is filtering out the ```.php``` and ```.phtml``` extensions, so if we want to upload a PHP script we're going to have to find another extension. The wikipedia page for PHP gives us a few common extensions that we can try; however, there are actually a variety of other more rarely used extensions available that webservers may nonetheless still recognise. These include: ```.php3```, .```php4```, ```.php5```, ```.php7```, ```.phps```, ```.php-s```, ```.pht``` and ```.phar```. Many of these bypass the filter (which only blocks.php and .phtml), but it appears that the server is configured not to recognise them as PHP files, as in the below example:
+
+![array](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/eeb2048f-73a0-461e-aa37-e537ac2f6360)
+
+This is actually the default for Apache2 servers, at the time of writing; however, the sysadmin may have changed the default configuration (or the server may be out of date), so it's well worth trying.
+
+Eventually we find that the ```.phar``` extension bypasses the filter -- and works -- thus giving us our shell:
+
+![extension filtering](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/6b9c64e4-7b89-4617-955f-cf7b4432395b)
+
+Let's have a look at another example, with a different filter. This time we'll do it completely black-box: i.e. without the source code.
+
+Once again, we have our upload form:
+
+![filtering meow](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/8e97a1ea-240d-443d-8c92-41af6c3e3103)
+
+Ok, we'll start by scoping this out with a completely legitimate upload. Let's try uploading the ```spaniel.jpg``` image from before:
+
+![filterrrrrr](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/d1f35f9d-750b-48b2-ac7e-db8de8d7a314)
+
+Well, that tells us that JPEGS are accepted at least. Let's go for one that we can be pretty sure will be rejected (```shell.php```):
+
+![kali](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/048b2503-91e6-40a0-a870-73bd83a1197e)
+
+Can't say that was unexpected.
+
+From here we enumerate further, trying the techniques from above and just generally trying to get an idea of what the filter will accept or reject.
+
+In this case we find that there are no shell extensions that both execute, and are not filtered, so it's back to the drawing board.
+
+In the previous example we saw that the code was using the ```pathinfo()``` PHP function to get the last few characters after the ```.```, but what happens if it filters the input slightly differently?
+
+Let's try uploading a file called ```shell.jpg.php```. We already know that JPEG files are accepted, so what if the filter is just checking to see if the ```.jpg``` file extension is somewhere within the input?
+
+Pseudocode for this kind of filter may look something like this:
+
+```
+ACCEPT FILE FROM THE USER -- SAVE FILENAME IN VARIABLE userInput
+IF STRING ".jpg" IS IN VARIABLE userInput:
+    SAVE THE FILE
+ELSE:
+    RETURN ERROR MESSAGE
+```
+
+When we try to upload our file we get a success message. Navigating to the ```/uploads``` directory confirms that the payload was successfully uploaded:
+
+![index](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/249ea7cb-b700-4917-8ca6-98d75bb9eebf)
+
+Activating it, we receive our shell:
+
+![upload](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/974d5275-3ff4-4b7d-b43f-4ef2727bae03)
+
+This is by no means an exhaustive list of upload vulnerabilities related to file extensions. As with everything in hacking, we are looking to exploit flaws in code that others have written; this code may very well be uniquely written for the task at hand. This is the really important point to take away from this task: there are a million different ways to implement the same feature when it comes to programming -- your exploitation must be tailored to the filter at hand. The key to bypassing any kind of server side filter is to enumerate and see what is allowed, as well as what is blocked; then try to craft a payload which can pass the criteria the filter is looking for.
+
+Now your turn. You know the drill by now -- figure out and bypass the filter to upload and activate a shell. Your flag is in ```/var/www/```. The site you're accessing is ```annex.uploadvulns.thm```.
+
+Be aware that this task has also implemented a randomised naming scheme for the first time. For now you shouldn't have any trouble finding your shell, but be aware that directories will not always be indexable...
+
+**Q/A**
+
+What is the flag in /var/www/?
+
+```THM{MGEyYzJiYmI3ODIyM2FlNTNkNjZjYjFl}```
+
+<h3>Bypassing Server-Side Filtering: Magic Numbers</h3>
+
