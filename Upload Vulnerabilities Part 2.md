@@ -76,3 +76,22 @@ What is the flag in /var/www/?
 Time to turn things up another notch!
 Client-side filters are easy to bypass -- you can see the code for them, even if it's been obfuscated and needs processed before you can read it; but what happens when you can't see or manipulate the code? Well, that's a server-side filter. In short, we have to perform a lot of testing to build up an idea of what is or is not allowed through the filter, then gradually put together a payload which conforms to the restrictions.
 
+For the first part of this task we'll take a look at a website that's using a blacklist for file extensions as a server side filter. There are a variety of different ways that this could be coded, and the bypass we use is dependent on that. In the real world we wouldn't be able to see the code for this, but for this example, it will be included here:
+
+```
+<?php
+    //Get the extension
+    $extension = pathinfo($_FILES["fileToUpload"]["name"])["extension"];
+    //Check the extension against the blacklist -- .php and .phtml
+    switch($extension){
+        case "php":
+        case "phtml":
+        case NULL:
+            $uploadFail = True;
+            break;
+        default:
+            $uploadFail = False;
+    }
+?>
+```
+
