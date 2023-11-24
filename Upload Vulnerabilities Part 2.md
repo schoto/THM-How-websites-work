@@ -160,6 +160,6 @@ Be aware that this task has also implemented a randomised naming scheme for the 
 What is the flag in /var/www/?
 
 ```THM{MGEyYzJiYmI3ODIyM2FlNTNkNjZjYjFl}```
-
+1s
 <h3>Bypassing Server-Side Filtering: Magic Numbers</h3>
 
