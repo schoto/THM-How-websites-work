@@ -221,4 +221,3 @@ Grab the flag from /var/www/
 
 <h3>Example Methodology</h3>
 
-
