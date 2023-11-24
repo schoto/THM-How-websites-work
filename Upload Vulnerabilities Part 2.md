@@ -160,6 +160,65 @@ Be aware that this task has also implemented a randomised naming scheme for the 
 What is the flag in /var/www/?
 
 ```THM{MGEyYzJiYmI3ODIyM2FlNTNkNjZjYjFl}```
-1s
+
 <h3>Bypassing Server-Side Filtering: Magic Numbers</h3>
+
+We've already had a look at server-side extension filtering, but let's also take the opportunity to see how magic number checking could be implemented as a server-side filter.
+
+As mentioned previously, magic numbers are used as a more accurate identifier of files. The magic number of a file is a string of hex digits, and is always the very first thing in a file. Knowing this, it's possible to use magic numbers to validate file uploads, simply by reading those first few bytes and comparing them against either a whitelist or a blacklist. Bear in mind that this technique can be very effective against a PHP based webserver; however, it can sometimes fail against other types of webserver (hint hint).
+
+Let's take a look at an example. As per usual, we have an upload page:
+
+![magic](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/be682444-c958-4abd-a6a9-d2c163c32d56)
+
+As expected, if we upload our standard shell.php file, we get an error; however, if we upload a JPEG, the website is fine with it. All running as per expected so far.
+
+From the previous attempt at an upload, we know that JPEG files are accepted, so let's try adding the JPEG magic number to the top of our ```shell.php``` file. A quick look at the list of file signatures on Wikipedia shows us that there are several possible magic numbers of JPEG files (https://en.wikipedia.org/wiki/List_of_file_signatures)
+
+ It shouldn't matter which we use here, so let's just pick one (```FF D8 FF DB```). We could add the ASCII representation of these digits (ÿØÿÛ) directly to the top of the file but it's often easier to work directly with the hexadecimal representation, so let's cover that method.
+
+ Before we get started, let's use the Linux ```file``` command to check the file type of our shell:
+
+![shell ;eow](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/cd2d3bad-a4f0-4207-a754-1e4ba72a7917)
+
+As expected, the command tells us that the filetype is PHP. Keep this in mind as we proceed with the explanation.
+
+We can see that the magic number we've chosen is four bytes long, so let's open up the reverse shell script and add four random characters on the first line. These characters do not matter, so for this example we'll just use four "A"s:
+
+![AAAA](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/0adcc54a-d299-4c54-b1bb-c08b887009e5)
+
+Save the file and exit. Next we're going to reopen the file in hexeditor (which comes by default on Kali), or any other tool which allows you to see and edit the shell as hex. In ```hexeditor``` the file looks like this:
+
+![asCCii](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/e9a17cdb-c681-4d75-9209-fca02cdcaeb4)
+
+Note the four bytes in the red box: they are all ```41```, which is the hex code for a capital "A" -- exactly what we added at the top of the file previously.
+
+Change this to the magic number we found earlier for JPEG files: ```FF D8 FF DB```
+
+![offset](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/21c86744-4923-44af-85bb-b1bd19ea9357)
+
+Now if we save and exit the file (Ctrl + x), we can use ```file``` once again, and see that we have successfully spoofed the filetype of our shell:
+
+![data](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/f6ce14a2-96fb-4880-8892-113192201796)
+
+Perfect. Now let's try uploading the modified shell and see if it bypasses the filter!
+
+![magic numberes](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/57f73a8f-aad8-4094-8725-c99bc73b96b1)
+
+There we have it -- we bypassed the server-side magic number filter and received a reverse shell.
+
+Head to ```magic.uploadvulns.thm``` -- it's time for the last mini-challenge.
+
+This will be the final example website you have to hack before the challenge in task eleven; as such, we are once again stepping up the level of basic security. The website in the last task implemented an altered naming scheme, prepending the date and time of upload to the file name. This task will not do so to keep it relatively easy; however, directory indexing has been turned off, so you will not be able to navigate to the directory containing the uploads. Instead you will need to access the shell directly using its URI.
+
+Bypass the magic number filter to upload a shell. Find the location of the uploaded shell and activate it. Your flag is in ```/var/www/```.
+
+**Q/A**
+
+Grab the flag from /var/www/
+
+```THM{MWY5ZGU4NzE0ZDlhNjE1NGM4ZThjZDJh}```
+
+<h3>Example Methodology</h3>
+
 
