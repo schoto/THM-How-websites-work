@@ -8,4 +8,14 @@ Deploy the virtual machine on this task and explore the web application: MACHINE
 
 What is the first ingredient that Rick needs?
 
-``````
+```mr. meeseek hair```
+
+What is the second ingredient in Rick’s potion?
+
+```1 jerry tear```
+
+What is the last and final ingredient?
+
+```fleeb juice```
+
+That was the weardest THM room, not in a good sense tho
