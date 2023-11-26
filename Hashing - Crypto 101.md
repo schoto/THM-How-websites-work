@@ -58,3 +58,7 @@ If you have an 8 bit hash output, how many possible hashes are there?
 
 <h3>Uses for hashing</h3>
 
+**What can we do with hashing?**
+
+Hashing is used for 2 main purposes in Cyber Security. To verify integrity of data (More on that later), or for verifying passwords.
+
