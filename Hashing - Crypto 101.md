@@ -44,3 +44,17 @@ MD5 and SHA1 have been attacked, and made technically insecure due to engineerin
 
 **Q/A**
 
+What is the output size in bytes of the MD5 hash function?
+
+```16```
+
+Can you avoid hash collisions? (Yea/Nay)
+
+```Nay```
+
+If you have an 8 bit hash output, how many possible hashes are there?
+
+```256```
+
+<h3>Uses for hashing</h3>
+
