@@ -93,3 +93,23 @@ Here's a quick example so you can try and understand what they're like.
 |e99a18c428cb38d5f260853678922e03|abc123|
 |fcea920f7412b5da7be0cf42b8c93759|1234567|
 
+Websites like Crackstation internally use HUGE rainbow tables to provide fast password cracking for hashes without salts. Doing a lookup in a sorted list of hashes is really quite fast, much much faster than trying to crack the hash.
+
+**Protecting against rainbow tables**
+
+To protect against rainbow tables, we add a salt to the passwords. The salt is randomly generated and stored in the database, unique to each user. In theory, you could use the same salt for all users but that means that duplicate passwords would still have the same hash, and a rainbow table could still be created specific passwords with that salt.
+
+The salt is added to either the start or the end of the password before it’s hashed, and this means that every user will have a different password hash even if they have the same password. Hash functions like bcrypt and sha512crypt handle this automatically. Salts don’t need to be kept private.
+
+**Q/A**
+
+Crack the hash "```d0199f51d2728db6011945145a1b607a```" using the rainbow table manually.
+
+```basketball```
+
+Should you encrypt passwords? Yea/Nay
+
+```Nay```
+
+<h3>Recognising password hashes</h3>
+
