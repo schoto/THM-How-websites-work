@@ -152,3 +152,64 @@ How long is a Windows NTLM hash, in characters?
 
 <h3>Password Cracking</h3>
 
+We've already mentioned rainbow tables as a method to crack hashes that don't have a salt, but what if there's a salt involved?
+
+You can't "decrypt" password hashes. They're not encrypted. You have to crack the hashes by hashing a large number of different inputs (often rockyou, these are the possible passwords), potentially adding the salt if there is one and comparing it to the target hash. Once it matches, you know what the password was. Tools like Hashcat and John the Ripper are normally used for this.
+
+**Why crack on GPUs?**
+
+Graphics cards have thousands of cores. Although they can’t do the same sort of work that a CPU can, they are very good at some of the maths involved in hash functions. This means you can use a graphics card to crack most hash types much more quickly. Some hashing algorithms, notably bcrypt, are designed so that hashing on a GPU is about the same speed as hashing on a CPU which helps them resist cracking.
+
+**Cracking on VMs?**
+
+It’s worth mentioning that virtual machines normally don’t have access to the host's graphics card(s) (You can set this up, but it’s a lot of work). If you want to run hashcat, it’s best to run it on your host (Windows builds are available on the website, run it from powershell). You can get Hashcat working with OpenCL in a VM, but the speeds will likely be much worse than cracking on your host. John the ripper uses CPU by default and as such, works in a VM out of the box although you may get better speeds running it on the host OS as it will have more threads and no overhead from running in a VM.
+
+**NEVER (I repeat, NEVER!) use --force for hashcat**. It can lead to false positives (wrong passwords being given to you) and false negatives (skips over the correct hash).
+
+**Time to get cracking!**
+
+I'll provide the hashes. Crack them. You can choose how. You'll need to use online tools, Hashcat, and/or John the Ripper. Remember the restrictions on online rainbow tables. Don't be afraid to use the hints. Rockyou or online tools should be enough to find all of these.
+
+**Q/A**
+
+Crack this hash: ```$2a$06$7yoU3Ng8dHTXphAg913cyO6Bjs3K5lBnwq5FJyA6d01pMSrddr1ZG```
+
+![hash](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/ea94c5c5-52b9-4e79-9650-e1951ba78145)
+
+```85208520```
+
+Crack this hash: ```9eb7ee7f551d2f0ac684981bd1f1e2fa4a37590199636753efe614d4db30e8e1```
+
+![hash1](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/8c715f34-3ffe-4899-8460-d9601797b03b)
+
+```halloween```
+
+Crack this hash: ```$6$GQXVvW4EuM$ehD6jWiMsfNorxy5SINsgdlxmAEl3.yif0/c3NqzGLa0P.S7KRDYjycw5bnYkF5ZtB8wQy8KnskuWQS3Yr1wQ0```
+
+```spaceman```
+
+Bored of this yet? Crack this hash: ```b6b0d451bbf6fed658659a9e7e5598fe```
+
+```funforyou```
+
+<h3>Hashing for integrity checking</h3>
+
+**Integrity Checking**
+
+Hashing can be used to check that files haven't been changed. If you put the same data in, you always get the same data out. If even a single bit changes, the hash will change a lot. This means you can use it to check that files haven't been modified or to make sure that they have downloaded correctly. You can also use hashing to find duplicate files, if two pictures have the same hash then they are the same picture.
+
+**HMACs**
+
+HMAC is a method of using a cryptographic hashing function to verify the authenticity and integrity of data. The TryHackMe VPN uses HMAC-SHA512 for message authentication, which you can see in the terminal output. A HMAC can be used to ensure that the person who created the HMAC is who they say they are (authenticity), and that the message hasn’t been modified or corrupted (integrity). They use a secret key, and a hashing algorithm in order to produce a hash.
+
+**Q/A**
+
+What's the SHA1 sum for the amd64 Kali 2019.4 ISO? http://old.kali.org/kali-images/kali-2019.4/
+
+![hash2](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/03a2e52d-02f3-4777-8804-7bc189abff46)
+
+```186c5227e24ceb60deb711f1bdc34ad9f4718ff9```
+
+What's the hashcat mode number for HMAC-SHA512 (key = $pass)?
+
+```1750```
