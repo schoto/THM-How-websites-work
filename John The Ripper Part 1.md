@@ -58,3 +58,23 @@ What is the most popular extended version of John the Ripper?
 
 <h3>Wordlists</h3>
 
+As we explained in the first task, in order to dictionary attack hashes, you need a list of words that you can hash and compare, unsurprisingly this is called a wordlist. There are many different wordlists out there, a good collection to use can be found in the SecLists repository. There are a few places you can look for wordlists on your attacking system of choice, we will quickly run through where you can find them.
+
+**Parrot, Kali and AttackBox**
+
+On Parrot, Kali and TryHackMe's AttackBox- you can find a series of amazing wordlists in the ```/usr/share/wordlists``` directory.
+
+**RockYou**
+
+For all of the tasks in this room, we will be using the infamous rockyou.txt wordlist- which is a very large common password wordlist, obtained from a data breach on a website called rockyou.com in 2009. If you are not using any of the above distributions, you can get the rockyou.txt wordlist from the SecLists repository under the ```/Passwords/Leaked-Databases``` subsection. You may need to extract it from .tar.gz format, using tar xvzf ```rockyou.txt.tar.gz```.
+
+Now that we have our hash cracker and wordlists all set up, lets move onto some hash cracking!
+
+**Q/A**
+
+What website was the rockyou.txt wordlist created from a breach on?
+
+```rockyou.com```
+
+<h3>Cracking Basic Hashes</h3>
+
