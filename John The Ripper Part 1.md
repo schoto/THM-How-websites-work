@@ -113,3 +113,65 @@ Example Usage:
 
 Sometimes John won't play nicely with automatically recognising and loading hashes, that's okay! We're able to use other tools to identify the hash, and then set john to use a specific format. There are multiple ways to do this, such as using an online hash identifier like this one --> https://hashes.com/en/tools/hash_identifier. I like to use a tool called hash-identifier --> https://gitlab.com/kalilinux/packages/hash-identifier/-/tree/kali/master, a Python tool that is super easy to use and will tell you what different types of hashes the one you enter is likely to be, giving you more options if the first one fails.
 
+To use hash-identifier, you can just pull the python file from gitlab using:wget ```https://gitlab.com/kalilinux/packages/hash-identifier/-/raw/kali/master/hash-id.py```.
+
+Then simply launch it with ```python3 hash-id.py``` and then enter the hash you're trying to identify- and it will give you possible formats!
+
+**Format-Specific Cracking**
+
+Once you have identified the hash that you're dealing with, you can tell john to use it while cracking the provided hash using the following syntax:
+
+```john --format=[format] --wordlist=[path to wordlist] [path to file]```
+
+```--format=``` - This is the flag to tell John that you're giving it a hash of a specific format, and to use the following format to crack it
+
+```[format]``` - The format that the hash is in
+
+Example Usage:
+
+john --format=raw-md5 --wordlist=/usr/share/wordlists/rockyou.txt hash_to_crack.txt
+
+A Note on Formats:
+
+When you are telling john to use formats, if you're dealing with a standard hash type, e.g. md5 as in the example above, you have to prefix it with ```raw-``` to tell john you're just dealing with a standard hash type, though this doesn't always apply. To check if you need to add the prefix or not, you can list all of John's formats using ```john --list=formats``` and either check manually, or grep for your hash type using something like ```john --list=formats | grep -iF "md5"```.
+
+**Practical**
+
+Now you know the syntax, modifiers and methods to crack basic hashes, try it yourself! Download the attached .txt files that
+
+**Q/A**
+
+What type of hash is hash1.txt?
+
+```md5```
+
+What is the cracked value of hash1.txt?
+
+```biscuit```
+
+What type of hash is hash2.txt?
+
+```sha1```
+
+What is the cracked value of hash2.txt
+
+```kangeroo```
+
+What type of hash is hash3.txt?
+
+```sha256```
+
+What is the cracked value of hash3.txt
+
+```microphone```
+
+What type of hash is hash4.txt?
+
+```whirlpool```
+
+What is the cracked value of hash4.txt
+
+```colossal```
+
+<h3>Cracking Windows Authentication Hashes</h3>
+
