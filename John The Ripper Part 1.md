@@ -78,3 +78,17 @@ What website was the rockyou.txt wordlist created from a breach on?
 
 <h3>Cracking Basic Hashes</h3>
 
+There are multiple ways to use John the Ripper to crack simple hashes, we're going to walk through a few, before moving on to cracking some ourselves.
+
+John Basic Syntax
+
+The basic syntax of John the Ripper commands is as follows. We will cover the specific options and modifiers used as we use them.
+
+```
+john [options] [path to file]
+```
+
+```john``` - Invokes the John the Ripper program
+
+```[path to file]``` - The file containing the hash you're trying to crack, if it's in the same directory you won't need to name a path, just the file.
+
