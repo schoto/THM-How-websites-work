@@ -92,3 +92,24 @@ john [options] [path to file]
 
 ```[path to file]``` - The file containing the hash you're trying to crack, if it's in the same directory you won't need to name a path, just the file.
 
+Automatic Cracking
+
+John has built-in features to detect what type of hash it's being given, and to select appropriate rules and formats to crack it for you, this isn't always the best idea as it can be unreliable- but if you can't identify what hash type you're working with and just want to try cracking it, it can be a good option! To do this we use the following syntax:
+
+```
+john --wordlist=[path to wordlist] [path to file]
+
+```
+
+```--wordlist=``` - Specifies using wordlist mode, reading from the file that you supply in the following path...
+
+```[path to wordlist]``` - The path to the wordlist you're using, as described in the previous task.
+
+Example Usage:
+
+```john --wordlist=/usr/share/wordlists/rockyou.txt hash_to_crack.txt```
+
+**Identifying Hashes**
+
+Sometimes John won't play nicely with automatically recognising and loading hashes, that's okay! We're able to use other tools to identify the hash, and then set john to use a specific format. There are multiple ways to do this, such as using an online hash identifier like this one --> https://hashes.com/en/tools/hash_identifier. I like to use a tool called hash-identifier --> https://gitlab.com/kalilinux/packages/hash-identifier/-/tree/kali/master, a Python tool that is super easy to use and will tell you what different types of hashes the one you enter is likely to be, giving you more options if the first one fails.
+
