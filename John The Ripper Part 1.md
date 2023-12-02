@@ -197,4 +197,8 @@ What do we need to set the "format" flag to, in order to crack this?
 
 What is the cracked value of this password?
 
-``````
+```mushroom```
+
+<h3>Cracking /etc/shadow Hashes</h3>
+
+
