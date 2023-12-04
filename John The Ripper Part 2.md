@@ -110,4 +110,3 @@ Now you're familiar with the Syntax for John's single crack mode, download the a
 
 <h3>Custom Rules</h3>
 
-
