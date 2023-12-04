@@ -110,3 +110,7 @@ Now you're familiar with the Syntax for John's single crack mode, download the a
 
 <h3>Custom Rules</h3>
 
+**What are Custom Rules?**
+
+As we journeyed through our exploration of what John can do in Single Crack Mode- you may have some ideas about what some good mangling patterns would be, or what patterns your passwords often use- that could be replicated with a certain mangling pattern. The good news is you can define your own sets of rules, which John will use to dynamically create passwords. This is especially useful when you know more information about the password structure of whatever your target is.
+
