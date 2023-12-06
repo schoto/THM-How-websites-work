@@ -200,3 +200,8 @@ Now, time for you to have a go!
 
 **Q/A**
 
+![thththtm](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/8bce476e-1e37-4c61-8e52-baf888821196)
+
+<h3>Cracking Password Protected Zip Files</h3>
+
+
