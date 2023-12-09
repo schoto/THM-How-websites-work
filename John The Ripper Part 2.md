@@ -278,4 +278,36 @@ Now have a go at cracking the attached "secure" rar file!
 
 <h3>Cracking SSH Keys with John</h3>
 
+Okay, okay I hear you, no more file archives! Fine! Let's explore one more use of John that comes up semi-frequently in CTF challenges. Using John to crack the SSH private key password of id_rsa files. Unless configured otherwise, you authenticate your SSH login using a password. However, you can configure key-based authentication, which lets you use your private key, id_rsa, as an authentication key to login to a remote machine over SSH. However, doing so will often require a password- here we will be using John to crack this password to allow authentication over SSH using the key.
 
+**SSH2John**
+
+Who could have guessed it, another conversion tool? Well, that's what working with John is all about. As the name suggests ssh2john converts the id_rsa private key that you use to login to the SSH session into hash format that john can work with. Jokes aside, it's another beautiful example of John's versatility. The syntax is about what you'd expect. Note that if you don't have ssh2john installed, you can use ```ssh2john.py```, which is located in the ```/opt/john/ssh2john.py```. If you're doing this, replace the ```ssh2john``` command with python3 ```/opt/ssh2john.py``` or on Kali, python ```/usr/share/john/ssh2john.py```.
+
+```ssh2john [id_rsa private key file] > [output file]```
+
+```ssh2john``` - Invokes the ssh2john tool
+
+```[id_rsa private key file]``` - The path to the id_rsa file you wish to get the hash of
+
+```>``` - This is the output director, we're using this to send the output from this file to the...
+
+```[output file]``` - This is the file that will store the output from
+
+**Example Usage**
+
+```ssh2john id_rsa > id_rsa_hash.txt```
+
+**Cracking**
+
+For the final time, we're feeding the file we output from ssh2john, which in our example use case is called "id_rsa_hash.txt" and, as we did with rar2john we can use this seamlessly with John:
+
+```john --wordlist=/usr/share/wordlists/rockyou.txt id_rsa_hash.txt```
+
+**Practical**
+
+Now I'd like you to crack the hash of the id_rsa file that's attached to this task!
+
+**Q/A**
+
+![mango](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/0d3f117c-30f6-48ce-b0f2-35d87598c5b9)
