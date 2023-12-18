@@ -72,3 +72,17 @@ There's a little bit of math(s) that comes up relatively often in cryptography. 
 
 When learning division for the first time, you were probably taught to use remainders in your answer. X % Y is the remainder when X is divided by Y.
 
+**Examples**
+
+25 % 5 = 0 (5*5 = 25 so it divides exactly with no remainder)
+
+23 % 6 = 5 (23 does not divide evenly by 6, there would be a remainder of 5)
+
+An important thing to remember about modulo is that it’s not reversible. If I gave you an equation: x % 5 = 4, there are infinite values of x that will be valid.
+
+**Q/A**
+
+![qa](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/f7b93927-759d-472f-811f-5f632349741c)
+
+<h3>Types of Encryption</h3>
+
