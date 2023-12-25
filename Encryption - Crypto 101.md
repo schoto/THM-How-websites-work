@@ -178,3 +178,5 @@ Who is TryHackMe's HTTPS certificate issued by?
 
 <h3>SSH Authentication</h3>
 
+By default, SSH is authenticated using usernames and passwords in the same way that you would log in to the physical machine.
+
