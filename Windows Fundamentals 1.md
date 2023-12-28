@@ -197,4 +197,76 @@ Note: Many of the tools that will be covered in the Windows Fundamentals series 
 
 <h3>User Accounts, Profiles, and Permissions</h3>
 
+User accounts can be one of two types on a typical local Windows system: Administrator & Standard User. 
+
+The user account type will determine what actions the user can perform on that specific Windows system. 
+
+- An Administrator can make changes to the system: add users, delete users, modify groups, modify settings on the system, etc. 
+- A Standard User can only make changes to folders/files attributed to the user & can't perform system-level changes, such as install programs.
+
+You are currently logged in as an Administrator. There are several ways to determine which user accounts exist on the system. 
+
+One way is to click the Start Menu and type Other User. A shortcut to System Settings > Other users should appear. 
+
+![other](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/96ce3d67-42d6-4359-a853-89c91ed17212)
+
+If you click on it, a Settings window should now appear. See below.
+
+![userZZZ](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/6601d581-4ec7-44fb-a9f3-9e6fa0c686b6)
+
+Since you're the Administrator, you see an option to Add someone else to this PC.
+
+Note: A Standard User will not see this option.  
+
+Click on the local user account. More options should appear: Change account type and Remove. 
+
+![remove](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/b1a88ba9-31cb-45ca-aa0c-a77bd95bd80f)
+
+Click on Change account type. The value in the drop-down box (or the highlighted value if you click the drop-down) is the current account type. 
+
+![standard user](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/a66ebdc1-c397-46b8-9cf1-d6b62d9ae7ac)
+
+When a user account is created, a profile is created for the user. The location for each user profile folder will fall under is C:\Users.
+
+For example, the user profile folder for the user account Max will be C:\Users\Max.
+
+The creation of the user's profile is done upon initial login. When a new user account logs in to a local system for the first time, they'll see several messages on the login screen. One of the messages, User Profile Service, sits on the login screen for a while, which is at work creating the user profile. See below.
+
+![please wait](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/73ce90a1-1530-4591-bd5a-c609c576aaf0)
+
+Once logged in, the user will see a dialog box similar to the one below (again), indicating that the profile is in creation.
+
+![perso](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/230a6632-1631-4159-824c-2e44b316ab8e)
+
+Each user profile will have the same folders; a few of them are:
+
+- Desktop
+- Documents
+- Downloads
+- Music
+- Pictures
+
+Another way to access this information, and then some, is using Local User and Group Management. 
+
+Right-click on the Start Menu and click Run. Type lusrmgr.msc. See below
+
+![lusrmgr](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/fc700157-acc3-4736-afe8-38372e36a62a)
+
+Note: The Run Dialog Box allows us to open items quickly. 
+
+Back to lusrmgr, you should see two folders: Users and Groups. 
+
+If you click on Groups, you see all the names of the local groups along with a brief description for each group. 
+
+Each group has permissions set to it, and users are assigned/added to groups by the Administrator. When a user is assigned to a group, the user inherits the permissions of that group. A user can be assigned to multiple groups.
+
+Note: If you click on Add someone else to this PC from Other users, it will open Local Users and Management. 
+
+**Q/A**
+
+![qa2](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/d0fa2961-034c-479e-91ac-4d584e22aad3)
+
+<h3>User Account Control</h3>
+
+
 
