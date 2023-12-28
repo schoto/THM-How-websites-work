@@ -268,5 +268,110 @@ Note: If you click on Add someone else to this PC from Other users, it will open
 
 <h3>User Account Control</h3>
 
+The large majority of home users are logged into their Windows systems as local administrators. Remember from the previous task that any user with administrator as the account type can make changes to the system.
 
+A user doesn't need to run with high (elevated) privileges on the system to run tasks that don't require such privileges, such as surfing the Internet, working on a Word document, etc. This elevated privilege increases the risk of system compromise because it makes it easier for malware to infect the system. Consequently, since the user account can make changes to the system, the malware would run in the context of the logged-in user.
 
+To protect the local user with such privileges, Microsoft introduced User Account Control (UAC). This concept was first introduced with the short-lived Windows Vista and continued with versions of Windows that followed.
+
+Note: UAC (by default) doesn't apply for the built-in local administrator account. 
+
+How does UAC work? When a user with an account type of administrator logs into a system, the current session doesn't run with elevated permissions. When an operation requiring higher-level privileges needs to execute, the user will be prompted to confirm if they permit the operation to run. 
+
+Let's look at the program on the account you're currently logged into, the built-in administrator account—Right-click to view its Properties.
+
+In the Security tab, we can see the users/groups and their permissions to this file. Notice that the standard user is not listed. 
+
+![wireshark](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/79ac9524-3698-4171-b157-2003997d6f2c)
+
+Log in as the standard user and try to install this program. To do this, you can remote desktop into the machine as the standard user account. 
+
+Note: You have the username and password for the standard user. It's visible in lusrmgr.msc.
+
+Before installing the program, notice the icon. Do you see the difference? When you're logged in as the standard user, the shield icon is on the program's default icon. See below.
+
+![properties](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/c3e0165a-40aa-4acc-bee5-465ef7a43233)
+
+This shield icon is an indicator that UAC will prompt to allow higher-level privileges to install the program.
+
+![icon](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/8cb7c78c-e591-4f24-92f3-58497369239f)
+
+Double-click the program, and you'll see the UAC prompt. Notice that the built-in administrator account is already set as the user name and prompts the account's password. See below.
+
+![device](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/263305f0-a7c3-4d0a-889c-3e6d5fc0c694)
+
+After some time, if a password is not entered, the UAC prompt disappears, and the program does not install. 
+
+This feature reduces the likelihood of malware successfully compromising your system. You can read more about UAC here.
+
+<h3>Settings and the Control Panel</h3>
+
+On a Windows system, the primary locations to make changes are the Settings menu and the Control Panel.
+
+For a long time, the Control Panel has been the go-to location to make system changes, such as adding a printer, uninstall a program, etc. 
+
+The Settings menu was introduced in Windows 8, the first Windows operating system catered to touch screen tablets, and is still available in Windows 10. As a matter of fact, the Settings menu is now the primary location a user goes to if they are looking to change the system. 
+
+There are similarities and differences between the two menus. Below are screenshots of each.
+
+Settings:
+
+![settingas](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/a1671c96-694e-4600-ab14-729bd2f27f83)
+
+Control Panel: 
+
+![control panel](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/2f2b5aaf-2ab0-4250-ba84-929d315e20e6)
+
+Note: The icons for Settings might be different in the version of Windows on your personal device. 
+
+Both can be accessed from the Start Menu. See below.
+
+![server](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/73f29e34-8d68-4c0e-ac46-292bbf8ee4b6)
+
+Control Panel is the menu where you will access more complex settings and perform more complex actions. In some cases, you can start in Settings and end up in the Control Panel.
+
+For example, in Settings, click on Network & Internet. From here, click on Change adapter options. 
+
+![ethernet](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/5ee37c9f-4ea0-4faf-8d9f-a79cc1e11186)
+
+Notice that the next window that pops up is from the Control Panel. 
+
+![network](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/87d83230-1ece-4443-a09b-e0299c520a98)
+
+If you're unclear which to open if you wish to change a setting, use the Start menu and search for it. 
+
+In the example below, the search was 'wallpaper.' Notice that few results were returned. 
+
+![choose](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/404c328e-50b2-48a5-b84e-17a1e4df5120)
+
+If we click on the Best match, a window to the Settings menu appears to make changes to the wallpaper. 
+
+![back](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/d6ce5eb3-ae91-49f9-9c70-3b23cf8d9b37)
+
+**Q/A**
+
+![TryHackMe-Windows-Fundamentals-1](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/46b28cfa-f9cb-458f-a166-7c5e8483e006)
+
+<h3>Task Manager</h3>
+
+The last subject that will be touched on in this module is the Task Manager.
+
+The Task Manager provides information about the applications and processes currently running on the system. Other information is also available, such as how much CPU and RAM are being utilized, which falls under Performance. 
+
+You can access the Task Manager by right-clicking the taskbar. 
+
+![TASK MANAGER](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/d0089462-53d3-4690-9389-abc6dbbaaa8f)
+
+Task Manager will open in Simple View and won't show much information. 
+
+![mopre](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/00f8679f-1fdf-4b47-9b2e-911b59e2c18c)
+
+Click on More details, and the view changes.
+
+![TASSSSSK](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/ddf5964f-75f3-41b0-815c-fe9ae2a34b99)
+
+If you wish to learn more about the core Windows processes and what each process is responsible for, visit the Core Windows Processes room. 
+
+**Q/A**
+
+![qaqaqa](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/e6f1c0d4-14b7-431e-8198-04241fbb870b)
