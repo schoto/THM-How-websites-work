@@ -96,3 +96,105 @@ The Notification Area, which is typically located at the bottom right of the Win
 
 **Q/A**
 
+![TryHackMe-Windows-Fundamentals-1](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/cff2a517-7836-41f1-949c-5b79d34fcccc)
+
+<h3>The File System</h3>
+
+The file system used in modern versions of Windows is the New Technology File System or simply NTFS.
+
+Before NTFS, there was FAT16/FAT32 (File Allocation Table) and HPFS (High Performance File System). 
+
+You still see FAT partitions in use today. For example, you typically see FAT partitions in USB devices, MicroSD cards, etc. but traditionally not on personal Windows computers/laptops or Windows servers.
+
+NTFS is known as a journaling file system. In case of a failure, the file system can automatically repair the folders/files on disk using information stored in a log file. This function is not possible with FAT.   
+
+NTFS addresses many of the limitations of the previous file systems; such as: 
+
+- Supports files larger than 4GB
+- Set specific permissions on folders and files
+- Folder and file compression
+- Encryption (Encryption File System or EFS)
+
+If you're running Windows, what is the file system your Windows installation is using? You can check the Properties (right-click) of the drive your operating system is installed on, typically the C drive (C:\).
+
+![gif](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/f13c6750-f82a-4e1e-908b-52d7567d8275)
+
+You can read Microsoft's official documentation on FAT, HPFS, and NTFS here. 
+
+Let's speak briefly on some features that are specific to NTFS. 
+
+On NTFS volumes, you can set permissions that grant or deny access to files and folders.
+
+The permissions are:
+
+- Full control
+- Modify
+- Read & Execute
+- List folder contents
+- Read
+- Write
+
+The below image lists the meaning of each permission on how it applies to a file and a folder. (credit Microsoft)
+
+![permits](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/d34d4469-927b-437c-8b0d-eae90980de35)
+
+How can you view the permissions for a file or folder?
+
+- Right-click the file or folder you want to check for permissions.
+- From the context menu, select Properties.
+- Within Properties, click on the Security tab.
+- In the Group or user names list, select the user, computer, or group whose permissions you want to view.
+
+In the below image, you can see the permissions for the Users group for the Windows folder. 
+
+![user](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/70feafd9-406e-4d5d-8511-959b3ca52454)
+
+Refer to the Microsoft documentation to get a better understanding of the NTFS permissions for Special Permissions.
+
+Another feature of NTFS is Alternate Data Streams (ADS).
+
+Alternate Data Streams (ADS) is a file attribute specific to Windows NTFS (New Technology File System).
+
+Every file has at least one data stream ($DATA), and ADS allows files to contain more than one stream of data. Natively Window Explorer doesn't display ADS to the user. There are 3rd party executables that can be used to view this data, but Powershell gives you the ability to view ADS for files.
+
+From a security perspective, malware writers have used ADS to hide data.
+
+Not all its uses are malicious. For example, when you download a file from the Internet, there are identifiers written to ADS to identify that the file was downloaded from the Internet.
+
+To learn more about ADS, refer to the following link from MalwareBytes here. 
+
+Bonus: If you wish to interact hands-on with ADS, I suggest exploring Day 21 of Advent of Cyber 2 (already done)
+
+![qa](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/5348b625-83cf-4310-83f4-97f072032f97)
+
+<h3>The Windows\System32 Folders</h3>
+
+The Windows folder (C:\Windows) is traditionally known as the folder which contains the Windows operating system. 
+
+The folder doesn't have to reside in the C drive necessarily. It can reside in any other drive and technically can reside in a different folder.
+
+This is where environment variables, more specifically system environment variables, come into play. Even though not discussed yet, the system  environment variable for the Windows directory is %windir%.
+
+Per Microsoft, "Environment variables store information about the operating system environment. This information includes details such as the operating system path, the number of processors used by the operating system, and the location of temporary folders".
+
+There are many folders within the 'Windows' folder. See below.
+
+![boot](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/0779ce07-ab26-43ca-8ef8-2826b490dc95)
+
+One of the many folders is System32. 
+
+![system32](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/ea6c9f42-163c-4aa8-8e0c-5fb9436ed8fb)
+
+The System32 folder holds the important files that are critical for the operating system.
+
+You should proceed with extreme caution when interacting with this folder. Accidentally deleting any files or folders within System32 can render the Windows OS inoperational. Read more about this action here --> https://www.howtogeek.com/346997/what-is-the-system32-directory-and-why-you-shouldnt-delete-it/
+
+Note: Many of the tools that will be covered in the Windows Fundamentals series reside within the System32 folder. 
+
+**Q/A**
+
+![qa1](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/d6c6318f-4d73-42a9-82e6-85424b1d99a7)
+
+<h3>User Accounts, Profiles, and Permissions</h3>
+
+
