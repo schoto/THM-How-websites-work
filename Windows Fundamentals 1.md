@@ -40,3 +40,7 @@ What encryption can you enable on Pro that you can't enable in Home?
 
 <h3>The Desktop (GUI)</h3>
 
+The Windows Desktop, aka the graphical user interface or GUI in short, is the screen that welcomes you once you log into a Windows 10 machine.
+
+Traditionally, you need to pass the login screen first. The login screen is where you need to enter valid account credentials; usually, a username & password of a preexisting Windows account on that particular system or in the Active Directory environment (if it's a domain-joined machine)
+
