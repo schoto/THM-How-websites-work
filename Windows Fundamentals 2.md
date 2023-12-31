@@ -67,5 +67,11 @@ To run a tool, we can use the command to launch the tool via the run prompt, com
 
 <h3>Change UAC Settings</h3>
 
+We're continuing with Tools that are available through the System Configuration panel.
 
+User Account Control (UAC) was covered in great detail in Windows Fundamentals 1. 
+
+The UAC settings can be changed or even turned off entirely (not recommended).
+
+You can move the slider to see how the setting will change the UAC settings and Microsoft's stance on the setting.
 
