@@ -75,3 +75,13 @@ The UAC settings can be changed or even turned off entirely (not recommended).
 
 You can move the slider to see how the setting will change the UAC settings and Microsoft's stance on the setting.
 
+![choose](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/37f2c73c-f0a8-4a56-9ace-55cb888e2898)
+
+**Q/A**
+
+What is the command to open User Account Control Settings? (The answer is the name of the .exe file, not the full path)
+
+```UserAccountControlSettings.exe```
+
+<h3>Computer Management</h3>
+
