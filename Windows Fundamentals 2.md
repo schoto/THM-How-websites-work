@@ -178,4 +178,7 @@ Note: The WMIC tool is deprecated in Windows 10, version 21H1. Windows PowerShel
 
 **Q/A**
 
+![TryHackMe-Windows-Fundamentals-2](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/798c14c5-720a-4991-b189-5a511f707b12)
+
+<h3>System Information</h3>
 
