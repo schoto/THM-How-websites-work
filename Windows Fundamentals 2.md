@@ -85,3 +85,97 @@ What is the command to open User Account Control Settings? (The answer is the na
 
 <h3>Computer Management</h3>
 
+We're continuing with Tools that are available through the System Configuration panel.
+
+The Computer Management (compmgmt) utility has three primary sections: System Tools, Storage, and Services and Applications.
+
+![mgmt1](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/72a9e93d-a359-4fa1-912e-0135feacafd2)
+
+System Tools
+
+Let's start with Task Scheduler. Per Microsoft, with Task Scheduler, we can create and manage common tasks that our computer will carry out automatically at the times we specify.
+
+A task can run an application, a script, etc., and tasks can be configured to run at any point. A task can run at log in or at log off. Tasks can also be configured to run on a specific schedule, for example, every five mins.
+
+To create a basic task, click on Create Basic Task under Actions (right pane).
+
+![actions](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/33a0da9c-28a0-47f6-9a71-3103bc172fae)
+
+Next is Event Viewer.
+
+Event Viewer allows us to view events that have occurred on the computer. These records of events can be seen as an audit trail that can be used to understand the activity of the computer system. This information is often used to diagnose problems and investigate actions executed on the system. 
+
+![overview](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/8ebc8df5-f6fb-4b60-9161-5eb8989cd89c)
+
+Event Viewer has three panes.
+
+- The pane on the left provides a hierarchical tree listing of the event log providers. (as shown in the image above)
+- The pane in the middle will display a general overview and summary of the events specific to a selected provider.
+- The pane on the right is the actions pane.
+
+There are five types of events that can be logged. Below is a table from docs.microsoft.com providing a brief description for each.
+
+![table](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/387339a7-fbd5-4e16-9077-fec6544d3c64)
+
+The standard logs are visible under Windows Logs. Below is a table from docs.microsoft.com providing a brief description for each.
+
+![table1](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/51057528-1ff8-4214-8771-05112967a13c)
+
+For more information about Event Viewer and Event Logs, please refer to the Windows Event Log room. 
+
+Shared Folders is where you will see a complete list of shares and folders shared that others can connect to. 
+
+![client](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/47abea3f-5a20-4f91-bcab-bd54e8dc93c5)
+
+In the above image, under Shares, are the default share of Windows, C$, and default remote administration shares created by Windows, such as ADMIN$. 
+
+As with any object in Windows, you can right-click on a folder to view its properties, such as Permissions (who can access the shared resource). 
+
+Under Sessions, you will see a list of users who are currently connected to the shares. In this VM, you won't see anybody connected to the shares.
+
+All the folders and/or files that the connected users access will list under Open Files.
+
+The Local Users and Groups section you should be familiar with from Windows Fundamentals 1 because it's lusrmgr.msc.
+
+In Performance, you'll see a utility called Performance Monitor (perfmon).
+
+Perfmon is used to view performance data either in real-time or from a log file. This utility is useful for troubleshooting performance issues on a computer system, whether local or remote. 
+
+![thm](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/f0d7e2dc-6386-447c-832b-383ee66f8c4d)
+
+Device Manager allows us to view and configure the hardware, such as disabling any hardware attached to the computer.
+
+![thm2](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/ae2e7d96-5808-43a7-89cf-4ab6b87b586b)
+
+Storage  
+
+Under Storage is Windows Server Backup and Disk Management. We'll only look at Disk Management in this room.
+
+Note: Since the virtual machine is a Windows Server operating system, there are utilities available that you will typically not see in Windows 10.  
+
+![basic](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/6b6064b5-671c-462d-b5e8-0eaeb3793618)
+
+Disk Management is a system utility in Windows that enables you to perform advanced storage tasks.  Some tasks are:
+
+- Set up a new drive
+- Extend a partition
+- Shrink a partition
+- Assign or change a drive letter (ex. E:) 
+
+Services and Applications
+
+![routing](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/ac594684-f102-4f2e-9a9a-250a78846b41)
+
+Recall from the previous task; a service is a special type of application that runs in the background. Here you can do more than enable and disable a service, such as view the Properties for the service. 
+
+![svga](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/05fe1cf2-c005-45b2-ac95-dbc695d5c522)
+
+WMI Control configures and controls the Windows Management Instrumentation (WMI) service.
+
+Per Wikipedia, "WMI allows scripting languages (such as VBScript or Windows PowerShell) to manage Microsoft Windows personal computers and servers, both locally and remotely. Microsoft also provides a command-line interface to WMI called Windows Management Instrumentation Command-line (WMIC)."
+
+Note: The WMIC tool is deprecated in Windows 10, version 21H1. Windows PowerShell supersedes this tool for WMI. 
+
+**Q/A**
+
+
