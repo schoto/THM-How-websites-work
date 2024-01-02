@@ -373,3 +373,10 @@ Warning: The registry is for advanced computer users. Making changes to the regi
 
 There are various ways to view/edit the registry. One way is to use the Registry Editor (regedit).
 
+![regedit](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/aaab9d48-8149-4975-a658-ab795aa73e73)
+
+**Q/A**
+
+What is the command to open the Registry Editor? (The answer is the name of  the .exe file, not the full path)
+
+```regedt32.exe```
