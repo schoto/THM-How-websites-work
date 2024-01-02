@@ -232,5 +232,7 @@ Towards the very bottom of this utility, there is a search bar. Please give it a
 
 **Q/A**
 
+![TryHackMe-Windows-Fundamentals-2](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/72ed9f83-c41a-4ccd-9a19-58bfe2ab5d3f)
 
+<h3>Resource Monitor</h3>
 
