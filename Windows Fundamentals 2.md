@@ -182,3 +182,55 @@ Note: The WMIC tool is deprecated in Windows 10, version 21H1. Windows PowerShel
 
 <h3>System Information</h3>
 
+We're continuing with Tools that are available through the System Configuration panel.
+
+What is the System Information (msinfo32) tool?
+
+Per Microsoft, "Windows includes a tool called Microsoft System Information (Msinfo32.exe).  This tool gathers information about your computer and displays a comprehensive view of your hardware, system components, and software environment, which you can use to diagnose computer issues."
+
+The  information in System Summary is divided into three sections:
+
+- Hardware Resources
+- Components
+- Software Environment
+
+System Summary will display general technical specifications for the computer, such as processor brand and model.
+
+![summary](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/b9e1b052-dbb0-4474-93df-15f756631262)
+
+The information displayed in Hardware Resources is not for the average computer user. If you want to learn more about this section, refer to the official Microsoft page.
+
+![hardware](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/a1e88fcd-1709-4473-a983-ba1b75466d8c)
+
+Under Components, you can see specific information about the hardware devices installed on the computer. Some sections don't show any information, but some sections do, such as Display and Input.
+
+![display](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/5e1f9d90-a95f-4950-b441-6c177acb59fd)
+
+In the Software Environment section, you can see information about software baked into the operating system and software you have installed. Other details are visible in this section as well, such as the Environment Variables and Network Connections. 
+
+![components](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/dbe91f24-08a9-45b4-8f5d-247fdaff3ec6)
+
+Recall from the Windows Fundamentals 1 room (The Windows\System32 Folder task) where Environment Variables was briefly touched on. 
+
+Per Microsoft, "Environment variables store information about the operating system environment. This information includes details such as the operating system path, the number of processors used by the operating system, and the location of temporary folders.
+
+The environment variables store data that is used by the operating system and other programs. For example, the WINDIR environment variable contains the location of the Windows installation directory. Programs can query the value of this variable to determine where Windows operating system files are located".
+
+Click on Environment Variables to see the assigned values for the virtual machine.
+
+![drivers](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/4c02c6b6-d448-403b-a0ef-cb5be6da7f13)
+
+Another method to view environment variables is ```Control Panel > System and Security > System > Advanced system settings > Environment Variables``` OR ```Settings > System > About > system info > Advanced system settings > Environment Variables```.
+
+![ok](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/fe2c369c-5c7e-4eb9-8013-5e7a0366662c)
+
+The detour is over. Let's redirect our attention back to msinfo32 and pick up where we left off.
+
+Towards the very bottom of this utility, there is a search bar. Please give it a go. Select Components and search for IP address.
+
+![search](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/dfb4eece-1d8d-4df3-acd2-da356dbbf975)
+
+**Q/A**
+
+
+
