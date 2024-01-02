@@ -353,4 +353,23 @@ You can use the same command to view the help information for other useful net s
 
 **Q/A**
 
+![qa](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/0d930f17-8ff6-4347-9f41-cfb37be011ab)
+
+<h3>Registry Editor</h3>
+
+We're continuing with Tools that are available through the System Configuration panel.
+
+The Windows Registry (per Microsoft) is a central hierarchical database used to store information necessary to configure the system for one or more users, applications, and hardware devices.
+
+The registry contains information that Windows continually references during operation, such as:
+
+- Profiles for each user
+- Applications installed on the computer and the types of documents that each can create
+- Property sheet settings for folders and application icons
+- What hardware exists on the system
+- The ports that are being used.
+
+Warning: The registry is for advanced computer users. Making changes to the registry can affect normal computer operations. 
+
+There are various ways to view/edit the registry. One way is to use the Registry Editor (regedit).
 
