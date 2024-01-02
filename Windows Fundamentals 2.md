@@ -236,3 +236,121 @@ Towards the very bottom of this utility, there is a search bar. Please give it a
 
 <h3>Resource Monitor</h3>
 
+We're continuing with Tools that are available through the System Configuration panel.
+
+What is Resource Monitor (resmon)?
+
+Per Microsoft, "Resource Monitor displays per-process and aggregate CPU, memory, disk, and network usage information, in addition to providing details about which processes are using individual file handles and modules. Advanced filtering allows users to isolate the data related to one or more processes (either applications or services), start, stop, pause, and resume services, and close unresponsive applications from the user interface. It also includes a process analysis feature that can help identify deadlocked processes and file locking conflicts so that the user can attempt to resolve the conflict instead of closing an application and potentially losing data."
+
+As some of the other tools mentioned in this room, this utility is geared primarily to advanced users who need to perform advanced troubleshooting on the computer system.
+
+In the Overview tab, Resmon has four sections:
+
+- CPU
+- Disk
+- Network
+- Memory
+
+![file](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/a76fcf19-2050-49ae-bba7-8c5a3299bbfd)
+
+The same four sections have corresponding tabs across the top. See below.
+
+![net](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/2db6d50c-b052-4f11-8dbf-8940d59061cc)
+
+Note that each tab has additional information for each. An image is shown below for each tab. 
+
+CPU
+
+![disk](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/eff16d51-0d9e-4a35-91eb-01e2f7641b02)
+
+Memory
+
+![memm](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/3e065097-5573-4308-8abf-4185bfc31130)
+
+Disk
+
+![resmon-disk](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/0fe8da48-bc52-47db-b4e3-75f889359e00)
+
+Network
+
+![resmon-network](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/00859d0a-946e-4fc2-a1fc-c5fa57295b15)
+
+Although not captured in any of the images above, Resource Monitor has a pane at the far right. This pane shows a graphical view in real-time for each section. 
+
+Note: The information displayed in Resource Monitor will be different for you compared to the images above.
+
+**Q/A**
+
+What is the command to open Resource Monitor? (The answer is the name of the .exe file, not the full path)
+
+```resmon.exe```
+
+<h3>Command Prompt</h3>
+
+We're continuing with Tools that are available through the System Configuration panel.
+
+The command prompt (cmd) can seem daunting at first, but it's really not that bad once you understand how to interact with it. 
+
+In early operating systems, the command line was the sole way to interact with the operating system.
+
+When the GUI (graphical user interface) was introduced, it allowed users to perform complex tasks with a few clicks of a button instead of entering commands in the command prompt. 
+
+Even though the GUI is the primary way to interact with the operating system, a computer user can still interact via the command prompt. 
+
+In this task, we'll only cover a few commands that a computer user can run in the command prompt to obtain information about the computer system.
+
+Let's start with a few simple commands, such as hostname and whoami.
+
+The command hostname will output the computer name.
+
+![thm1](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/5e4598d3-6896-49cd-954a-fedade9ba7b5)
+
+The command whoami will output the name of the logged-in user.
+
+![thm2](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/1f2a7d0c-3a49-4652-9651-4f7dbae64326)
+
+Next, let's look at some commands that are useful when troubleshooting.
+
+A command used often is ipconfig. This command will show the network address settings for the computer.
+
+![thm3](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/c20c53f2-c7b3-489e-abd2-98a51e3df8b6)
+
+Each command will have a help manual to explain the expected syntax to execute the command properly, along with any additional parameters that can be added to the command to expand its execution.
+
+A  command to retrieve the help manual for a command is /?.
+
+For example, to see the help manual for ipconfig, you can use the following command: ipconfig /?
+
+![thm4](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/3e1bc664-4bb1-4b50-b702-a2fff577d613)
+
+Note: To clear the command prompt screen, the command is cls. 
+
+The next command is netstat. Per the help manual, this command will display protocol statistics and current TCP/IP network connections. 
+
+![thm5](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/a9bd2dc3-f9f5-4843-859b-2110952cf6e3)
+
+In the above image, the line within the red box shows us an example syntax for the command. 
+
+The structure tells us the netstat command can be run alone or with parameters, such as -a,  -b,  -e, etc. 
+
+When any of the parameters are appended to the root command, netstat in this case, the output changes. Play with a few to see for yourself. 
+
+The net command is primarily used to manage network resources. This command supports sub-commands.
+
+If you type net without a sub-command, the output will show the syntax for the root command showing a few of the sub-commands you can use.
+
+![thm6](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/af41065d-c16b-4a49-a66a-9a0bdff6f9f8)
+
+For the net command, to display the help manual /? will not work. In this case, you need to use different syntax, which is net help.
+
+![thm7](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/ada6bcb1-3b67-474d-a28c-6cab9fc788ea)
+
+So, if you wish to see the help information for net user , the command is net help user. 
+
+![thm8](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/2cfa9c73-71d6-4956-a1b1-a9c684b2ff73)
+
+You can use the same command to view the help information for other useful net sub-commands, such as localgroup, use, share, and session. 
+
+**Q/A**
+
+
