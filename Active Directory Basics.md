@@ -36,6 +36,7 @@ Active Directory is also the component that allows your school/university to res
 
 **Q/A**
 
+![active d](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/916de905-6c7d-4b77-93f4-a65c6cc69993)
 
+<h3>Active Directory</h3>
 
-Active Directory is also the component that allows your school/university to restrict you from accessing the control panel on your school/university machines. Policies will usually be deployed throughout the network so that you don't have administrative privileges over those computers.
