@@ -40,3 +40,5 @@ Active Directory is also the component that allows your school/university to res
 
 <h3>Active Directory</h3>
 
+The core of any Windows Domain is the Active Directory Domain Service (AD DS). This service acts as a catalogue that holds the information of all of the "objects" that exist on your network. Amongst the many objects supported by AD, we have users, groups, machines, printers, shares and many others. Let's look at some of them:
+
