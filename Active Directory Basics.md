@@ -194,3 +194,8 @@ Note: When connecting via RDP, use THM\sophie as the username to specify you wan
 
 **Q/A**
 
+![answers thm](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/013c1083-a047-42ed-9f98-ae7293381a1c)
+
+<h3>Managing Computers in AD</h3>
+
+
