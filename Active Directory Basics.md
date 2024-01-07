@@ -119,4 +119,5 @@ You are probably wondering why we have both groups and OUs. While both are used 
 
 <h3>Managing Users in AD</h3>
 
+Your first task as the new domain administrator is to check the existing AD OUs and users, as some recent changes have happened to the business. You have been given the following organisational chart and are expected to make changes to the AD to match it:
 
