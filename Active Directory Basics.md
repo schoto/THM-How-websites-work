@@ -121,3 +121,76 @@ You are probably wondering why we have both groups and OUs. While both are used 
 
 Your first task as the new domain administrator is to check the existing AD OUs and users, as some recent changes have happened to the business. You have been given the following organisational chart and are expected to make changes to the AD to match it:
 
+![daniel](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/b8ae5e13-e7c3-4e0e-900f-cd95455b19d6)
+
+Deleting extra OUs and users
+
+The first thing you should notice is that there is an additional department OU in your current AD configuration that doesn't appear in the chart. We've been told it was closed due to budget cuts and should be removed from the domain. If you try to right-click and delete the OU, you will get the following error:
+
+![active](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/05c06c32-1a95-4fb8-bb9b-d82ff8cb0315)
+
+By default, OUs are protected against accidental deletion. To delete the OU, we need to enable the Advanced Features in the View menu:
+
+![dvanced](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/598a8d52-5f53-4a21-bcf5-28ab93567185)
+
+This will show you some additional containers and enable you to disable the accidental deletion protection. To do so, right-click the OU and go to Properties. You will find a checkbox in the Object tab to disable the protection:
+
+![object](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/6adc2e2d-1562-439d-b74d-bfaa6b9edae6)
+
+Be sure to uncheck the box and try deleting the OU again. You will be prompted to confirm that you want to delete the OU, and as a result, any users, groups or OUs under it will also be deleted.
+
+After deleting the extra OU, you should notice that for some of the departments, the users in the AD don't match the ones in our organisational chart. Create and delete users as needed to match them.
+
+Delegation
+
+One of the nice things you can do in AD is to give specific users some control over some OUs. This process is known as delegation and allows you to grant users specific privileges to perform advanced tasks on OUs without needing a Domain Administrator to step in.
+
+One of the most common use cases for this is granting IT support the privileges to reset other low-privilege users' passwords. According to our organisational chart, Phillip is in charge of IT support, so we'd probably want to delegate the control of resetting passwords over the Sales, Marketing and Management OUs to him.
+
+For this example, we will delegate control over the Sales OU to Phillip. To delegate control over an OU, you can right-click it and select Delegate Control:
+
+![delegate](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/5e99cb76-c905-42c6-ab98-eda808695318)
+
+This should open a new window where you will first be asked for the users to whom you want to delegate control:
+
+Note: To avoid mistyping the user's name, write "phillip" and click the Check Names button. Windows will autocomplete the user for you.
+
+![users groups](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/2c3978a8-08c8-41e2-aba0-95e8e924bc25)
+
+Click OK, and on the next step, select the following option:
+
+![tasks](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/d9b3f198-6b93-4851-b46e-45c66fbefe1f)
+
+Click next a couple of times, and now Phillip should be able to reset passwords for any user in the sales department. While you'd probably want to repeat these steps to delegate the password resets of the Marketing and Management departments, we'll leave it here for this task. You are free to continue to configure the rest of the OUs if you so desire.
+
+Now let's use Phillip's account to try and reset Sophie's password. Here are Phillip's credentials for you to log in via RDP:
+
+Username : *******
+Password : *******
+
+Note: When connecting via RDP, use THM\phillip as the username to specify you want to log in using the user phillip on the THM domain.
+
+While you may be tempted to go to Active Directory Users and Computers to try and test Phillip's new powers, he doesn't really have the privileges to open it, so you'll have to use other methods to do password resets. In this case, we will be using Powershell to do so:
+
+```
+PS C:\Users\phillip> Set-ADAccountPassword sophie -Reset -NewPassword (Read-Host -AsSecureString -Prompt 'New Password') -Verbose
+
+New Password: *********
+
+VERBOSE: Performing the operation "Set-ADAccountPassword" on target "CN=Sophie,OU=Sales,OU=THM,DC=thm,DC=local".
+```
+
+Since we wouldn't want Sophie to keep on using a password we know, we can also force a password reset at the next logon with the following command:
+
+```
+PS C:\Users\phillip> Set-ADUser -ChangePasswordAtLogon $true -Identity sophie -Verbose
+
+VERBOSE: Performing the operation "Set" on target "CN=Sophie,OU=Sales,OU=THM,DC=thm,DC=local".
+```
+
+**Log into Sophie's account with your new password and retrieve a flag from Sophie's desktop.**
+
+Note: When connecting via RDP, use THM\sophie as the username to specify you want to log in using the user sophie on the THM domain.
+
+**Q/A**
+
