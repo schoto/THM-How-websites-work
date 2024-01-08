@@ -227,7 +227,3 @@ Now, move the personal computers and laptops to the Workstations OU and the serv
 **Q/A**
 
 ![yay](https://github.com/schoto/THM-Web-Hacking-Fundamentals/assets/69323411/77488f9e-a8c1-4ddd-972d-fef410eb97c4)
-
-<h3>Group Policies</h3>
-
-
