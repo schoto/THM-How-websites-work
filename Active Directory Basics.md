@@ -198,4 +198,5 @@ Note: When connecting via RDP, use THM\sophie as the username to specify you wan
 
 <h3>Managing Computers in AD</h3>
 
+By default, all the machines that join a domain (except for the DCs) will be put in the container called "Computers". If we check our DC, we will see that some devices are already there:
 
